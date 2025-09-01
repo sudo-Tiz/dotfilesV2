@@ -111,9 +111,9 @@ baktar() { tar -zcvf "${1}_$(date '+%Y-%m-%d_%H-%M').tar.gz" "$1"; }
 
 # VENV
 alias \
-  ve='python -m venv .env' \
-  va='source ./.env/bin/activate || source ./env/bin/activate || source ./.venv/bin/activate' \
-  veva='python -m venv .env && source ./.env/bin/activate' \
+  ve='python -m venv .venv' \
+  va='source .venv/bin/activate || source .env/bin/activate' \
+  veva='python -m venv .venv && source .venv/bin/activate' \
   da='deactivate'
 
 # Copy progress bar
