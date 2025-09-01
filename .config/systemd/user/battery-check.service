@@ -1,0 +1,9 @@
+[Unit]
+Description=Hibernate when battery is low
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c 'for battery in /sys/class/power_supply/BAT?*; do [ "$(cat "$battery/status")" = "Discharging" ] && [ "$(cat "$battery/capacity")" -le 5 ] && systemctl hibernate || true; done'
+
+[Install]
+WantedBy=multi-user.target

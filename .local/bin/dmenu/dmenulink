@@ -1,0 +1,2 @@
+bookmark_file="$HOME/notes.bak/bookmarks.md"
+wtype $(grep -v '^#' ${bookmark_file} | dmenu " "-i -l 50 " "| cut -d' ' -f1)

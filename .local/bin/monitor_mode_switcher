@@ -1,0 +1,43 @@
+#!/bin/sh
+# This script manages the display mode of the eDP-1 monitor.
+# It switches between normal, tablet, tent modes, and cycles through rotation values based on the provided argument or current state.
+
+# Get the current rotation value
+get_current_rotation() {
+  hyprctl monitors eDP-1 | grep -oP '(?<=transform: )\d'
+}
+
+# Apply the transformation and restart nwg-panel
+apply_transformation() {
+  local rot=$1
+  hyprctl keyword input:touchdevice:transform "$rot" >/dev/null 2>&1
+  hyprctl keyword monitor eDP-1,preferred,auto,1,transform,"$rot" >/dev/null 2>&1
+  # setsid nwg-panel $( [ "$rot" -eq 1 ] || [ "$rot" -eq 3 ] && echo "-c top_tablet" ) &
+}
+
+# Main logic
+if [ $# -eq 1 ]; then
+  case $1 in
+  [0-3])
+    rot=$1 # Assign the argument to rot
+    ;;
+  "u")
+    # If the argument is "u", switch between normal and tent mode
+    rot=$([ "$(get_current_rotation)" -eq 0 ] && echo 2 || echo 0)
+    ;;
+  "t")
+    # If the argument is "t", cycle through rotation values 0, 1, 2, and 3
+    rot=$((($(get_current_rotation) + 1) % 4))
+    ;;
+  *)
+    echo "Error: The argument must be a digit between 0 and 3, 'u', or 't'."
+    exit 1
+    ;;
+  esac
+else
+  # If no argument is given, switch between normal and tablet mode
+  rot=$([ "$(get_current_rotation)" -eq 0 ] && echo 1 || echo 0)
+fi
+
+# Apply the transformation
+apply_transformation "$rot"

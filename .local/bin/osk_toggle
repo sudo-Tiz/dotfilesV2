@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Get the current state of the On-Screen Keyboard
+current_state=$(gsettings get org.gnome.desktop.a11y.applications screen-keyboard-enabled)
+
+# Toggle the state
+if [ "$current_state" = "true" ]; then
+    gsettings set org.gnome.desktop.a11y.applications screen-keyboard-enabled false
+    echo "On-Screen Keyboard disabled."
+else
+    gsettings set org.gnome.desktop.a11y.applications screen-keyboard-enabled true
+    echo "On-Screen Keyboard enabled."
+fi
+
