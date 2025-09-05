@@ -2163,6 +2163,7 @@ c.url.searchengines = {
     "aw": "https://wiki.archlinux.org/?search={}",
     "wiki": "https://en.wikipedia.org/wiki/{}",
     "yt": "https://www.youtube.com/results?search_query={}",
+    "to": "https://thepiratebay.org/search.php?q={}",
 }
 
 ## Page(s) to open at the start.
