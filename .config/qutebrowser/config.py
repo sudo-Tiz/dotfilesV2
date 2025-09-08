@@ -2164,6 +2164,7 @@ c.url.searchengines = {
     "wiki": "https://en.wikipedia.org/wiki/{}",
     "yt": "https://www.youtube.com/results?search_query={}",
     "to": "https://thepiratebay.org/search.php?q={}",
+    "st": "https://www.sous-titres.eu/search.html?q={}",
 }
 
 ## Page(s) to open at the start.
