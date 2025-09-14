@@ -19,4 +19,4 @@ cfL	${XDG_CONFIG_HOME:-$HOME/.config}/lf/scope		# lf's scope/preview file
 cfX	${XDG_CONFIG_HOME:-$HOME/.config}/nsxiv/exec/key-handler	# nsxiv (image viewer) key/script handler
 cfh	${XDG_CONFIG_HOME:-$HOME/.config}/hypr/hyprland.conf		# Hyprland conf file
 cff	${XDG_CONFIG_HOME:-$HOME/.config}/tsumiki/config.json		# Fabric conf file
-cffd	$HOME/space/Tsumiki/config.json		# Tsumiki dev conf file
+cfas	${XDG_CONFIG_HOME:-$HOME/.config}/ashell/config.toml # Ashell conf file
