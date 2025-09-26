@@ -1,55 +1,76 @@
 #!/bin/sh
-
-# Set variables
-BACKUP_DRIVE="/mnt/expansion"
-CRYPTED_FILE="/mnt/expansion/crypted"
+LUKS_PART="/dev/sda2"
+MOUNT_POINT="/mnt/backup"
 SOURCE="/"
-BACKUP_DEST="/mnt/backup"
-LUKS_NAME="cryptbackup"
-PASSWORD="m1euXdorDDan:monp0te"
 
-if [ "$EUID" -ne 0 ]; then
-  echo "Please run as root"
-  exit
-fi
-
-# Check if Backup drive is mounted
-if ! mountpoint -q "$BACKUP_DRIVE"; then
-  echo "Backup drive $BACKUP_DRIVE is not mounted. Aborting."
+[ "$(id -u)" -eq 0 ] || {
+  echo "Error: run as root"
   exit 1
-fi
+}
 
-# Check if veracrypt file is mounted or mount it
-if mountpoint -q "$BACKUP_DEST"; then
-  echo "Veracrypt file is already mounted."
-else
-  # Mount Veracrypt volume
-  veracrypt --text --keyfiles "" --pim 0 --protect-hidden no --password $PASSWORD $CRYPTED_FILE $BACKUP_DEST
-  # Check if Veracrypt volume is mounted
-  if ! mountpoint -q "$BACKUP_DEST"; then
-    echo "Failed to mount Veracrypt file  $CRYPTED_FILE. Aborting."
+[ -e /dev/mapper/backup ] || cryptsetup open "$LUKS_PART" backup -d - ||
+  {
+    echo "Error: cannot open $LUKS_PART"
     exit 1
-  fi
-fi
+  }
 
-# Check if backup destination exists and is writable
-if [ ! -d "$BACKUP_DEST" ] || [ ! -w "$BACKUP_DEST" ]; then
-  echo "Backup destination $BACKUP_DEST does not exist or is not writable. Aborting."
-  exit 1
-fi
+mountpoint -q "$MOUNT_POINT" 2>/dev/null || (
+  mkdir -p "$MOUNT_POINT"
+  mount /dev/mapper/backup "$MOUNT_POINT" ||
+    {
+      echo "Error: cannot mount /dev/mapper/backup"
+      cryptsetup close backup
+      exit 1
+    }
+)
 
-# Create incremental backup
-rsync -aAX --info=progress2 --info=name0 --stats --delete --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/var/tmp/*","/run/*","/mnt/*","/lost+found/*","/media/HDD/tiz/games/*","/swapfile","*.log","*.tmp","*.swp","*.bak","*.cache","/var/cache/*","*.thumbnails","*.old"} $SOURCE $BACKUP_DEST
-
+rsync -aAXx --info=progress2 --info=name0 --stats --delete \
+  --exclude="/dev/*" \
+  --exclude="/proc/*" \
+  --exclude="/sys/*" \
+  --exclude="/tmp/*" \
+  --exclude="/var/tmp/*" \
+  --exclude="/var/cache/*" \
+  --exclude="/run/*" \
+  --exclude="/lost+found/*" \
+  --exclude="/media/*" \
+  --exclude="/swapfile" \
+  --exclude="*.log" \
+  --exclude="*.tmp" \
+  --exclude="*.swp" \
+  --exclude="*.bak" \
+  --exclude="*.cache" \
+  --exclude="*.thumbnails" \
+  --exclude="*.old" \
+  --exclude="/mnt/*" \
+  --exclude="/var/lib/docker/*" \
+  --exclude="/var/cache/pacman/pkg/*" \
+  --exclude="/var/log/journal/*" \
+  --exclude="/home/*/.cache/*" \
+  --exclude="/home/*/.mozilla/firefox/*/cache2/*" \
+  --exclude="*.core" \
+  --exclude="*.pid" \
+  --exclude="*.sock" \
+  --exclude="/home/tiz/cloud/*" \
+  --exclude="/home/tiz/documents/*" \
+  --exclude="/home/tiz/images/*" \
+  --exclude="/home/tiz/notes/*" \
+  --exclude="/home/tiz/muzek/*" \
+  --exclude="/home/*/Downloads/*" \
+  "$SOURCE" "$MOUNT_POINT"
 RET=$?
-# Notify the user  of the return of the sync command
-if [ $RET -eq 0 ]; then
-  echo "Backup on $BACKUP_DRIVE completed successfully."
-  sudo -u tiz DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send "Backup on $BACKUP_DRIVE completed successfully."
+
+MSG="Backup $([ $RET -eq 0 ] && echo completed || echo failed)"
+if command -v notify-send >/dev/null 2>&1; then
+  sudo -u tiz DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus \
+    notify-send "LUKS Backup" "$MSG" || echo "$MSG"
 else
-  echo "Backup on $BACKUP_DRIVE failed with error code $RET."
-  sudo -u tiz DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus notify-send "Backup on $BACKUP_DRIVE failed with error code $RET."
+  echo "$MSG"
 fi
 
-# Unmount backup device
-veracrypt --text --dismount $CRYPTED_FILE
+printf "Unmount and close LUKS container now? [y/N] "
+read ANS
+case "$ANS" in
+[Yy]*) umount "$MOUNT_POINT" && cryptsetup close backup || echo "Warning: cleanup failed" ;;
+*) echo "Container left mounted" ;;
+esac

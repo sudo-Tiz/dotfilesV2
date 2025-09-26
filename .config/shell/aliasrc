@@ -41,12 +41,12 @@ alias \
 
 # LS
 alias \
-  l="eza --group-directories-first --sort extension --group" \
-  ll="l -l" \
-  la="l -aF" \
-  lla="l -laF"
-#lt="exa -T" \
-#llt="exa -Tl \
+  l="eza -F" \
+  ll="eza -lF" \
+  la="eza -aF" \
+  lla="eza -laF" \
+  lt="eza -TaF" \
+  llt="eza -Tal" \
 
 # CD
 alias \
@@ -94,12 +94,15 @@ baktar() { tar -zcvf "${1}_$(date '+%Y-%m-%d_%H-%M').tar.gz" "$1"; }
   gcl='git clone' \
   gull='git pull' \
   gush='git push' \
+  gusho='git push -f origin' \
+  gash="git stash" \
+  gme= "git merge" \
+  gmest="git merge stash" \
   gco='git commit -m' \
   ga='git add' \
   gr='git restore' \
   grs='git restore --staged' \
   greset1='git reset --hard HEAD~1' \
-  gusho='git push -f origin' \
   gst='git status' \
   gl='git log' \
   gb='git branch' \

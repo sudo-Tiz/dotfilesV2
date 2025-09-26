@@ -44,6 +44,7 @@ listen_cmd = "swaync-client -swb"
 [window_title]
 truncate_title_after_length = 100
 
+
 [settings]
 audio_sinks_more_cmd = "pavucontrol -t 3"
 audio_source_more_cmd = "pavucontrol -t 4"
@@ -55,8 +56,8 @@ shutdown_cmd = "shutdown now"
 suspend_cmd = "systemctl suspend"
 reboot_cmd = "systemctl reboot"
 logout_cmd = "loginctl kill-user $(whoami)"
-remove_airplane_btn = false
-remove_idle_btn = true
+remove_airplane_btn = true
+remove_idle_btn = false
 
 [[settings.CustomButton]]
 name = "Keyboard"

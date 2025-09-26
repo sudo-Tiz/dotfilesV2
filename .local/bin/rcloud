@@ -3,7 +3,7 @@
 pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Desk " || setsid rclone --vfs-cache-mode writes mount "tizcloud":/Desk ~/cloud &
 pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Documents" || setsid rclone --vfs-cache-mode writes mount "tizcloud":/Documents ~/documents &
 pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Images" || setsid rclone --vfs-cache-mode writes mount "tizcloud":/Images ~/images &
-pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Musiques" || setsid rclone --vfs-cache-mode writes mount "tizcloud":/Musiques ~/music &
-pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Templates" || setsid rclone --vfs-cache-mode writes mount "tizcloud":/Templates ~/Templates &
 pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Notes" || setsid rclone --vfs-cache-mode writes mount "tizcloud":/Notes ~/notes &
+# pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Templates" || setsid rclone --vfs-cache-mode writes mount "tizcloud":/Templates ~/Templates &
+# pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Musiques" || setsid rclone --vfs-cache-mode writes mount "tizcloud":/Musiques ~/music &
 # while inotifywait -r -e modify,create,delete --exclude '.*~$|.*/[0-9]+$' ~/notes_bisync; do rclone bisync "tizcloud":/Notes ~/notes_bisync; done &
