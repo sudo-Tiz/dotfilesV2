@@ -140,7 +140,7 @@ alias \
 alias campic="ffmpeg -f v4l2 -i /dev/video0 -vframes 1 image.jpg"
 
 # Cheatsheet for linux commands
-ch() { curl "http://cheat.sh/$@"; }
+ch() { curl "http://cheat.sh/$1"; }
 
 # RUN THE COMMAND FROM HISTORY, USING FZF AS SELECTOR, ALTERNATIVE TO <C-R>
 hf() {

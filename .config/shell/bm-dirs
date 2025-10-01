@@ -12,5 +12,5 @@ L   $HOME/local/
 M   /media/HDD/$USER
 S   $HOME/space
 mash $HOME/local/mash-playbook
-mash-dev $HOME/local/mash-playbook-dev
+mash-dev $HOME/local/mash-dev
 F ${XDG_CONFIG_HOME:-$HOME/.config}/tsumiki
