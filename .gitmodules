@@ -1,6 +1,3 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = git@github.com:sudo-Tiz/LazyVim.git
-[submodule ".config/tsumiki"]
-	path = .config/tsumiki
-	url = git@github.com:sudo-Tiz/Tsumiki.git

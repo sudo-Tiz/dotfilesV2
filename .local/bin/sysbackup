@@ -51,11 +51,11 @@ rsync -aAXx --info=progress2 --info=name0 --stats --delete \
   --exclude="*.core" \
   --exclude="*.pid" \
   --exclude="*.sock" \
-  --exclude="/home/tiz/cloud/*" \
-  --exclude="/home/tiz/documents/*" \
-  --exclude="/home/tiz/images/*" \
-  --exclude="/home/tiz/notes/*" \
-  --exclude="/home/tiz/muzek/*" \
+  --exclude="/home/*/cloud/*" \
+  --exclude="/home/*/documents/*" \
+  --exclude="/home/*/images/*" \
+  --exclude="/home/*/Notes/*" \
+  --exclude="/home/*/music/*" \
   --exclude="/home/*/Downloads/*" \
   "$SOURCE" "$MOUNT_POINT"
 RET=$?

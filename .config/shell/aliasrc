@@ -109,7 +109,8 @@ baktar() { tar -zcvf "${1}_$(date '+%Y-%m-%d_%H-%M').tar.gz" "$1"; }
   gch="git checkout" \
   gchb="git checkout -b" \
   gls='l --group-directories-first --color=auto -d $(git ls-tree $(git branch | grep \* | cut -d " " -f2) --name-only)' \
-  gll='l --group-directories-first --color=auto -d $(git ls-tree -r $(git branch | grep \* | cut -d " " -f2) --name-only)' &&
+  gll='l --group-directories-first --color=auto -d $(git ls-tree -r $(git branch | grep \* | cut -d " " -f2) --name-only)' \
+  grao='git remote rm origin; git remote add origin'  &&
   gdi() { git diff --name-only --relative --diff-filter=d | xargs bat --diff; }
 
 # VENV

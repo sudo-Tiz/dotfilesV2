@@ -1,7 +1,5 @@
 log_level = "warn"
 outputs = "All"
-position = "Top"
-app_launcher_cmd = ""
 
 [modules]
 left = ["appLauncher", "Workspaces"]
@@ -41,9 +39,19 @@ command = "swaync-client -t -sw"
 # Any number of regex can be used to change the icon based on the alt field
 listen_cmd = "swaync-client -swb"
 
-[window_title]
-truncate_title_after_length = 100
+[system_info]
+indicators = [
+  "DownloadSpeed",
+  "UploadSpeed",
+  { Disk = "/" },
+  { Disk = "/mnt/backup" },
+  "Cpu",
+  "Memory",
+  "Temperature",
+]
 
+[system_info.temperature]
+sensor = "coretemp Package id 0"
 
 [settings]
 audio_sinks_more_cmd = "pavucontrol -t 3"
@@ -51,24 +59,29 @@ audio_source_more_cmd = "pavucontrol -t 4"
 wifi_more_cmd = "nm-connection-editor"
 vpn_more_cmd = "nm-connection-editor"
 bluetooth_more_cmd = "blueman-manager"
-lock_cmd = "hyprctl kill"
+lock_cmd = "systemctl suspend"
 shutdown_cmd = "shutdown now"
 suspend_cmd = "systemctl suspend"
 reboot_cmd = "systemctl reboot"
 logout_cmd = "loginctl kill-user $(whoami)"
+hibernate_cmd = "systemctl hibernate"
 remove_airplane_btn = true
 remove_idle_btn = false
+indicators = [
+  "Audio",
+  "IdleInhibitor",
+  "PowerProfile",
+  "Network",
+  "Vpn",
+  "Bluetooth",
+  "Battery",
+]
 
 [[settings.CustomButton]]
 name = "Keyboard"
 icon = "⌨️"
 command = "osk_toggle"
 status_command = "gsettings get org.gnome.desktop.a11y.applications screen-keyboard-enabled | grep true"
-
-# [[settings.CustomButton]]
-# name = "Terminal"
-# icon = ""
-# command = "foot"
 
 [appearance]
 style = "Islands"
