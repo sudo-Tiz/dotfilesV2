@@ -1,9 +1,10 @@
 log_level = "warn"
 outputs = "All"
+enable_esc_key = false
 
 [modules]
 left = ["appLauncher", "Workspaces"]
-center = ["Updates", "Clock", "CustomNotifications"]
+center = ["Updates", "servPing", "Clock", "CustomNotifications"]
 right = ["SystemInfo", ["Tray", "Privacy", "Settings"]]
 
 [updates]
@@ -20,10 +21,13 @@ name = "appLauncher"
 icon = "󱗼"
 command = "nwg-drawer"
 
-# [[CustomModule]]
-# name = "OSK"
-# icon = ""
-# command = "osk_toggle"
+[[CustomModule]]
+name = "servPing"
+icon = "🍏"
+icons.'Down' = "🍎"
+icons.'Running' = "🍏"
+listen_cmd = "bash -c 'while true; do if curl -s https://cloud.sudo-tiz.duckdns.org/login | grep -q Nextcloud; then echo \"{\\\"alt\\\":\\\"Running\\\"}\"; else echo \"{\\\"alt\\\":\\\"Down\\\"}\"; fi; sleep 20; done'"
+command = "bash -c 'while true; do if curl -s https://cloud.sudo-tiz.duckdns.org/login | grep -q Nextcloud; then echo \"{\\\"alt\\\":\\\"Running\\\"}\"; else echo \"{\\\"alt\\\":\\\"Down\\\"}\"; fi; sleep 20; done'"
 
 [[CustomModule]]
 name = "CustomNotifications"
@@ -59,14 +63,17 @@ audio_source_more_cmd = "pavucontrol -t 4"
 wifi_more_cmd = "nm-connection-editor"
 vpn_more_cmd = "nm-connection-editor"
 bluetooth_more_cmd = "blueman-manager"
-lock_cmd = "systemctl suspend"
+
+lock_cmd = "hyprctl kill"
+suspend_cmd = "systemctl suspend-then-hibernate"
 shutdown_cmd = "shutdown now"
-suspend_cmd = "systemctl suspend"
+hibernate_cmd = "systemctl hibernate"
 reboot_cmd = "systemctl reboot"
 logout_cmd = "loginctl kill-user $(whoami)"
-hibernate_cmd = "systemctl hibernate"
+
 remove_airplane_btn = true
 remove_idle_btn = false
+
 indicators = [
   "Audio",
   "IdleInhibitor",
@@ -85,7 +92,7 @@ status_command = "gsettings get org.gnome.desktop.a11y.applications screen-keybo
 
 [appearance]
 style = "Islands"
-scale_factor = 1.2
+scale_factor = 1
 primary_color = "#7aa2f7"
 success_color = "#9ece6a"
 text_color = "#a9b1d6"

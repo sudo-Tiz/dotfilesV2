@@ -1,0 +1,121 @@
+#!/usr/bin/env bash
+
+shopt -s nullglob globstar
+
+typeit=0
+if [[ $1 == "--type" || $1 == "-t" ]]; then
+	typeit=1
+	shift
+fi
+
+# Detect display environment and set tools accordingly
+if [[ -n $WAYLAND_DISPLAY ]]; then
+	dmenu="wofi -p bw -d -i"
+	xdotool="ydotool type --file -"
+	xclip="wl-copy"
+	# TODO:
+	clipOFF=""
+	clipON=""
+elif [[ -n $DISPLAY ]]; then
+	dmenu="dmenu"
+	xdotool="xdotool type --clearmodifiers --file -"
+	xclip="xclip -r -selection clipboard"
+	clipOFF="clipctl disable"
+	clipON="clipctl enable"
+else
+	echo "Error: No Wayland or X11 display detected" >&2
+	exit 1
+fi
+
+# Get BW session using keyctl
+get_bw_session() {
+	local name=${BW_KEY:-bw}
+	local timeout=${BW_TIMEOUT:-0}
+	local key
+
+	key=$(keyctl search @u user "$name" 2>/dev/null)
+	if [[ -n $key ]]; then
+		BW_SESSION=$(keyctl pipe "$key" 2>/dev/null)
+		if [[ -n $BW_SESSION ]]; then
+			# Reset timeout
+			((timeout > 0)) && keyctl timeout "$key" "$timeout"
+			return 0
+		fi
+	fi
+
+	# Unlock and store session
+	if BW_SESSION=$(bw unlock --raw); then
+		key=$(keyctl add user "$name" "$BW_SESSION" @u)
+		((timeout > 0)) && keyctl timeout "$key" "$timeout"
+		return 0
+	fi
+	return 1
+}
+
+# Main execution
+get_bw_session || exit 1
+export BW_SESSION
+
+# Get list of items and display in menu
+items=$(bw list items | jq -r '.[] | .id + "\t" + .name')
+selected=$(echo "$items" | $dmenu "$@")
+
+[[ -n $selected ]] || exit
+
+# Extract item ID
+item_id=$(echo "$selected" | cut -f1)
+
+# Get full item details
+item_json=$(bw get item "$item_id")
+
+# Extract fields
+username=$(echo "$item_json" | jq -r '.login.username // empty')
+password=$(echo "$item_json" | jq -r '.login.password // empty')
+totp_secret=$(echo "$item_json" | jq -r '.login.totp // empty')
+
+# Process username
+if [[ -n $username ]]; then
+	$clipOFF
+	if [[ $typeit -eq 0 ]]; then
+		echo "$username" | $xclip
+		notify-send "bwmenu" "login copied"
+	else
+		echo "$username" | $xdotool
+		notify-send "bwmenu" "login typed"
+	fi
+	sleep 3
+fi
+
+# Process password
+if [[ -n $password ]]; then
+	$clipOFF
+	if [[ $typeit -eq 0 ]]; then
+		echo "$password" | $xclip
+		notify-send "bwmenu" "password copied"
+	else
+		echo "$password" | $xdotool
+		notify-send "bwmenu" "password typed"
+	fi
+	sleep 5
+fi
+
+# Process TOTP
+if [[ -n $totp_secret ]]; then
+	# Extract secret from TOTP URI if needed
+	if [[ $totp_secret == otpauth://* ]]; then
+		totp_secret=$(echo "$totp_secret" | grep -oP 'secret=\K[^&]*')
+	fi
+	
+	if otp=$(oathtool -b --totp "$totp_secret" 2>/dev/null); then
+		$clipOFF
+		if [[ $typeit -eq 0 ]]; then
+			echo "$otp" | $xclip
+			notify-send "bwmenu" "otp copied"
+		else
+			echo "$otp" | $xdotool
+			notify-send "bwmenu" "otp typed"
+		fi
+	fi
+fi
+
+$clipON
