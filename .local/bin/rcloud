@@ -1,11 +1,17 @@
 #!/bin/sh
 
-pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Desk " >/dev/null || rclone --vfs-cache-mode writes mount tizcloud:/Desk ~/cloud &
-pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Documents" >/dev/null || rclone --vfs-cache-mode writes mount tizcloud:/Documents ~/documents &
-pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Images" >/dev/null || rclone --vfs-cache-mode writes mount tizcloud:/Images ~/images &
-pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Notes" >/dev/null || rclone --vfs-cache-mode writes mount tizcloud:/Notes ~/Notes &
-# pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Templates" || setsid rclone --vfs-cache-mode writes mount "tizcloud":/Templates ~/Templates &
-# pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Musiques" || setsid rclone --vfs-cache-mode writes mount "tizcloud":/Musiques ~/musiques &
+for _ in 1 2 3 4 5; do
+  if ping -c 1 9.9.9.9 >/dev/null 2>&1; then
+    pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Desk" >/dev/null || rclone --vfs-cache-mode writes mount tizcloud:/Desk ~/cloud &
+    pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Documents" >/dev/null || rclone --vfs-cache-mode writes mount tizcloud:/Documents ~/documents &
+    pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Images" >/dev/null || rclone --vfs-cache-mode writes mount tizcloud:/Images ~/images &
+    pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Notes" >/dev/null || rclone --vfs-cache-mode writes mount tizcloud:/Notes ~/Notes &
+    # pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Templates" || setsid rclone --vfs-cache-mode writes mount "tizcloud":/Templates ~/Templates &
+    # pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Musiques" || setsid rclone --vfs-cache-mode writes mount "tizcloud":/Musiques ~/musiques &
+    break
+  fi
+  sleep 5
+done
 # pgrep -f "inotifywait.*notes" >/dev/null || while inotifywait -r -e modify,create,delete --exclude '.*~$|.*/[0-9]+$' ~/notes; do
 #   sleep 5
 #   rclone bisync tizcloud:/Notes ~/notes --resync
