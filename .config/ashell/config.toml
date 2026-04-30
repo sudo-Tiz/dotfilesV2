@@ -1,20 +1,25 @@
 log_level = "warn"
 outputs = "All"
-enable_esc_key = false
+enable_esc_key = true
 
 [modules]
 left = ["appLauncher", "Workspaces"]
-center = ["Updates", "servPing", "Clock", "CustomNotifications"]
+center = ["Updates", "servPing", "Tempo", "CustomNotifications"]
 right = ["SystemInfo", ["Tray", "Privacy", "Settings"]]
 
 [updates]
 check_cmd = "checkupdates; yay -Qua"
 update_cmd = 'foot -e bash -c "yay; echo Done - Press enter to exit; read" &'
+interval = 3600
 
 [workspaces]
 enable_workspace_filling = true
 max_workspaces = 9
 visibility_mode = "MonitorSpecific"
+
+[tempo]
+clock_format = "%a %d %b %R"
+weather_location = { City = "Nantes" }
 
 [[CustomModule]]
 name = "appLauncher"

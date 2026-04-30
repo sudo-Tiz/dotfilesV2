@@ -99,6 +99,7 @@ baktar() { tar -zcvf "${1}_$(date '+%Y-%m-%d_%H-%M').tar.gz" "$1"; }
   gme= "git merge" \
   gmest="git merge stash" \
   gco='git commit -m' \
+  gcoa='git commit -amend --no-edit' \
   ga='git add' \
   gr='git restore' \
   grs='git restore --staged' \
