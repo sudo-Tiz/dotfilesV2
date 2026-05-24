@@ -211,27 +211,6 @@
                     "usePadding": false
                 },
                 {
-                    "defaultSettings": {
-                        "colorHistory": [
-                        ],
-                        "detectedRecorder": "",
-                        "filenameFormat": "",
-                        "gifMaxSeconds": 30,
-                        "installedLangs": [
-                            "eng"
-                        ],
-                        "paletteColors": [
-                        ],
-                        "recordCopyToClipboard": false,
-                        "recordSkipConfirmation": false,
-                        "screenshotPath": "",
-                        "selectedOcrLang": "eng",
-                        "transAvailable": false,
-                        "videoPath": ""
-                    },
-                    "id": "plugin:screen-toolkit"
-                },
-                {
                     "displayMode": "onhover",
                     "iconColor": "none",
                     "id": "Volume",
@@ -379,6 +358,28 @@
                 },
                 {
                     "id": "AirplaneMode"
+                },
+                {
+                    "enableOnStateLogic": false,
+                    "generalTooltipText": "calc",
+                    "icon": "calculator",
+                    "id": "CustomButton",
+                    "onClicked": "qs -c noctalia-shell ipc call plugin:noctalia-calculator toggle\n",
+                    "onMiddleClicked": "",
+                    "onRightClicked": "",
+                    "showExecTooltip": true,
+                    "stateChecksJson": "[]"
+                },
+                {
+                    "enableOnStateLogic": false,
+                    "generalTooltipText": "screen toolkit",
+                    "icon": "screenshot",
+                    "id": "CustomButton",
+                    "onClicked": "qs -c noctalia-shell ipc call plugin:screen-toolkit toggle\n",
+                    "onMiddleClicked": "",
+                    "onRightClicked": "",
+                    "showExecTooltip": true,
+                    "stateChecksJson": "[]"
                 }
             ]
         }
