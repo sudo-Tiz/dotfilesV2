@@ -6,7 +6,7 @@
         "clipboardWrapText": true,
         "customLaunchPrefix": "",
         "customLaunchPrefixEnabled": false,
-        "density": "default",
+        "density": "comfortable",
         "enableClipPreview": true,
         "enableClipboardChips": true,
         "enableClipboardHistory": true,
@@ -21,7 +21,7 @@
         ],
         "position": "center",
         "screenshotAnnotationTool": "",
-        "showCategories": true,
+        "showCategories": false,
         "showIconBackground": false,
         "sortByMostUsed": true,
         "terminalCommand": "foot -e",
@@ -34,7 +34,7 @@
         "spectrumFrameRate": 30,
         "spectrumMirrored": true,
         "visualizerType": "linear",
-        "volumeFeedback": true,
+        "volumeFeedback": false,
         "volumeFeedbackSoundFile": "",
         "volumeOverdrive": true,
         "volumeStep": 5
@@ -212,15 +212,24 @@
                 },
                 {
                     "defaultSettings": {
-                        "enableCross": true,
-                        "enableWindowsSelection": true,
-                        "keepSourceScreenshot": false,
-                        "recordingNotifications": true,
-                        "recordingSavePath": "~/Videos",
-                        "savePath": "~/Pictures/Screenshots",
-                        "screenshotEditor": "swappy"
+                        "colorHistory": [
+                        ],
+                        "detectedRecorder": "",
+                        "filenameFormat": "",
+                        "gifMaxSeconds": 30,
+                        "installedLangs": [
+                            "eng"
+                        ],
+                        "paletteColors": [
+                        ],
+                        "recordCopyToClipboard": false,
+                        "recordSkipConfirmation": false,
+                        "screenshotPath": "",
+                        "selectedOcrLang": "eng",
+                        "transAvailable": false,
+                        "videoPath": ""
                     },
-                    "id": "plugin:screen-shot-and-record"
+                    "id": "plugin:screen-toolkit"
                 },
                 {
                     "displayMode": "onhover",
@@ -720,7 +729,7 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/home/tiz/Pictures/Wallpapers",
+        "directory": "/home/tiz/.local/share/bg",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [

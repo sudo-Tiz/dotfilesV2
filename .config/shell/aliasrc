@@ -54,7 +54,7 @@ alias \
   ....="cd ../../.." \
   .....="cd ../../../.."
 
-# These common commands are just too long! Abbreviate them.
+# These commands are just too long! Abbreviate them.
 alias \
   ka="killall" \
   trem="transmission-remote" \
@@ -76,7 +76,8 @@ alias \
   fd="fd -Hi" \
   qute-clear="rm -rf ~/.local/share/qutebrowser/webengine; rm -rf ~/.cache/qutebrowser/webengine/" \
   mdtemp="cd $(mktemp -d)" \
-  tsumiki="${XDG_CONFIG_HOME:-$HOME/.config}/tsumiki/init.sh"
+  tsumiki="${XDG_CONFIG_HOME:-$HOME/.config}/tsumiki/init.sh" \
+  nocta="qs -c noctalia-shell ipc"
 old() { mv "$1" "$1.old"; }
 bak() { cp "$1" "$1.bak"; }
 baktar() { tar -zcvf "${1}_$(date '+%Y-%m-%d_%H-%M').tar.gz" "$1"; }
