@@ -1,0 +1,1053 @@
+{
+  "cheatsheetData": [
+    {
+      "title": "Keybinds",
+      "binds": [
+        {
+          "keys": "Super + TAB",
+          "desc": "exec qs -c noctalia-shell ipc call plugin:workspace-overview toggle",
+          "_verb": "exec",
+          "_param": "qs -c noctalia-shell ipc call plugin:workspace-overview toggle",
+          "_mods": "Super",
+          "_mainKey": "TAB"
+        },
+        {
+          "keys": "Super + S",
+          "desc": "exec",
+          "_verb": "exec",
+          "_param": "",
+          "_mods": "Super",
+          "_mainKey": "S"
+        },
+        {
+          "keys": "Super + COMMA",
+          "desc": "exec $ipc settings toggle",
+          "_verb": "exec",
+          "_param": "$ipc settings toggle",
+          "_mods": "Super",
+          "_mainKey": "COMMA"
+        },
+        {
+          "keys": "Super + D",
+          "desc": "exec $ipc launcher toggle",
+          "_verb": "exec",
+          "_param": "$ipc launcher toggle",
+          "_mods": "Super",
+          "_mainKey": "D"
+        },
+        {
+          "keys": "Super + W",
+          "desc": "exec $browser",
+          "_verb": "exec",
+          "_param": "$browser",
+          "_mods": "Super",
+          "_mainKey": "W"
+        },
+        {
+          "keys": "Super + Shift + W",
+          "desc": "exec qutebrowser",
+          "_verb": "exec",
+          "_param": "qutebrowser",
+          "_mods": "Super+Shift",
+          "_mainKey": "W"
+        },
+        {
+          "keys": "Super + Ctrl + W",
+          "desc": "exec tor-browser",
+          "_verb": "exec",
+          "_param": "tor-browser",
+          "_mods": "Super+Ctrl",
+          "_mainKey": "W"
+        },
+        {
+          "keys": "Super + C",
+          "desc": "exec $ipc controlCenter toggle",
+          "_verb": "exec",
+          "_param": "$ipc controlCenter toggle",
+          "_mods": "Super",
+          "_mainKey": "C"
+        },
+        {
+          "keys": "Super + E",
+          "desc": "exec $filemanager",
+          "_verb": "exec",
+          "_param": "$filemanager",
+          "_mods": "Super",
+          "_mainKey": "E"
+        },
+        {
+          "keys": "Super + Shift + E",
+          "desc": "exec $filemanagerbis",
+          "_verb": "exec",
+          "_param": "$filemanagerbis",
+          "_mods": "Super+Shift",
+          "_mainKey": "E"
+        },
+        {
+          "keys": "Super + M",
+          "desc": "exec thunderbird",
+          "_verb": "exec",
+          "_param": "thunderbird",
+          "_mods": "Super",
+          "_mainKey": "M"
+        },
+        {
+          "keys": "Super + Shift + M",
+          "desc": "exec elisa",
+          "_verb": "exec",
+          "_param": "elisa",
+          "_mods": "Super+Shift",
+          "_mainKey": "M"
+        },
+        {
+          "keys": "Super + V",
+          "desc": "exec $ipc launcher clipboard",
+          "_verb": "exec",
+          "_param": "$ipc launcher clipboard",
+          "_mods": "Super",
+          "_mainKey": "V"
+        },
+        {
+          "keys": "Super + Shift + C",
+          "desc": "exec dmenulink",
+          "_verb": "exec",
+          "_param": "dmenulink",
+          "_mods": "Super+Shift",
+          "_mainKey": "C"
+        },
+        {
+          "keys": "Super + Shift + D",
+          "desc": "exec bwmenu",
+          "_verb": "exec",
+          "_param": "bwmenu",
+          "_mods": "Super+Shift",
+          "_mainKey": "D"
+        },
+        {
+          "keys": "Super + A",
+          "desc": "exec pkill wofi || wofi -f -i -m -S run -w 4 # -W 100% -H 97%         #TODO: better integ",
+          "_verb": "exec",
+          "_param": "pkill wofi || wofi -f -i -m -S run -w 4 # -W 100% -H 97%         #TODO: better integ",
+          "_mods": "Super",
+          "_mainKey": "A"
+        },
+        {
+          "keys": "Super + Shift + A",
+          "desc": "exec pkill wofi || wofi -f -I -i -m -S drun -w 4 # -W 100% -H 97%",
+          "_verb": "exec",
+          "_param": "pkill wofi || wofi -f -I -i -m -S drun -w 4 # -W 100% -H 97%",
+          "_mods": "Super+Shift",
+          "_mainKey": "A"
+        },
+        {
+          "keys": "Super + X",
+          "desc": "exec $term",
+          "_verb": "exec",
+          "_param": "$term",
+          "_mods": "Super",
+          "_mainKey": "X"
+        },
+        {
+          "keys": "Super + RETURN",
+          "desc": "exec $term",
+          "_verb": "exec",
+          "_param": "$term",
+          "_mods": "Super",
+          "_mainKey": "RETURN"
+        },
+        {
+          "keys": "Super + N",
+          "desc": "exec $term newsboat",
+          "_verb": "exec",
+          "_param": "$term newsboat",
+          "_mods": "Super",
+          "_mainKey": "N"
+        },
+        {
+          "keys": "Super + O",
+          "desc": "exec signal-desktop",
+          "_verb": "exec",
+          "_param": "signal-desktop",
+          "_mods": "Super",
+          "_mainKey": "O"
+        },
+        {
+          "keys": "Super + B",
+          "desc": "exec blueman-manager",
+          "_verb": "exec",
+          "_param": "blueman-manager",
+          "_mods": "Super",
+          "_mainKey": "B"
+        },
+        {
+          "keys": "Super + BACKSPACE",
+          "desc": "exec sysact",
+          "_verb": "exec",
+          "_param": "sysact",
+          "_mods": "Super",
+          "_mainKey": "BACKSPACE"
+        },
+        {
+          "keys": "Super + U",
+          "desc": "exec dmenuunicode",
+          "_verb": "exec",
+          "_param": "dmenuunicode",
+          "_mods": "Super",
+          "_mainKey": "U"
+        },
+        {
+          "keys": "Super + T",
+          "desc": "exec $editor ~/Notes/todo.md",
+          "_verb": "exec",
+          "_param": "$editor ~/Notes/todo.md",
+          "_mods": "Super",
+          "_mainKey": "T"
+        },
+        {
+          "keys": "Super + Shift + T",
+          "desc": "exec $editor ~/notes/all.md",
+          "_verb": "exec",
+          "_param": "$editor ~/notes/all.md",
+          "_mods": "Super+Shift",
+          "_mainKey": "T"
+        },
+        {
+          "keys": "Super + Z",
+          "desc": "exec hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor * 1.25}')\"",
+          "_verb": "exec",
+          "_param": "hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor * 1.25}')\"",
+          "_mods": "Super",
+          "_mainKey": "Z"
+        },
+        {
+          "keys": "Super + Shift + Z",
+          "desc": "exec hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor / 1.25}')\"",
+          "_verb": "exec",
+          "_param": "hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor / 1.25}')\"",
+          "_mods": "Super+Shift",
+          "_mainKey": "Z"
+        },
+        {
+          "keys": "Super + Shift + Scroll Down",
+          "desc": "exec hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor * 1.25}')\"",
+          "_verb": "exec",
+          "_param": "hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor * 1.25}')\"",
+          "_mods": "Super+Shift",
+          "_mainKey": "MOUSE_DOWN"
+        },
+        {
+          "keys": "Super + Shift + Scroll Up",
+          "desc": "exec hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor / 1.25}')\"",
+          "_verb": "exec",
+          "_param": "hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor / 1.25}')\"",
+          "_mods": "Super+Shift",
+          "_mainKey": "MOUSE_UP"
+        },
+        {
+          "keys": "Super + F",
+          "desc": "fullscreen",
+          "_verb": "fullscreen",
+          "_param": "",
+          "_mods": "Super",
+          "_mainKey": "F"
+        },
+        {
+          "keys": "Super + S",
+          "desc": "pin",
+          "_verb": "pin",
+          "_param": "",
+          "_mods": "Super",
+          "_mainKey": "S"
+        },
+        {
+          "keys": "Super + Q",
+          "desc": "killactive",
+          "_verb": "killactive",
+          "_param": "",
+          "_mods": "Super",
+          "_mainKey": "Q"
+        },
+        {
+          "keys": "Super + Shift + Q",
+          "desc": "exec hyprctl kill",
+          "_verb": "exec",
+          "_param": "hyprctl kill",
+          "_mods": "Super+Shift",
+          "_mainKey": "Q"
+        },
+        {
+          "keys": "Super + G",
+          "desc": "exec hyprfreeze -a",
+          "_verb": "exec",
+          "_param": "hyprfreeze -a",
+          "_mods": "Super",
+          "_mainKey": "G"
+        },
+        {
+          "keys": "Super + SPACE",
+          "desc": "togglefloating",
+          "_verb": "togglefloating",
+          "_param": "",
+          "_mods": "Super",
+          "_mainKey": "SPACE"
+        },
+        {
+          "keys": "Super + ASTERISK",
+          "desc": "exec hyprctl reload      # reload Hyprland",
+          "_verb": "exec",
+          "_param": "hyprctl reload      # reload Hyprland",
+          "_mods": "Super",
+          "_mainKey": "ASTERISK"
+        },
+        {
+          "keys": "Super + Shift + Y",
+          "desc": "movetoworkspace special  # move to the special workspace",
+          "_verb": "movetoworkspace",
+          "_param": "special  # move to the special workspace",
+          "_mods": "Super+Shift",
+          "_mainKey": "Y"
+        },
+        {
+          "keys": "Super + Y",
+          "desc": "togglespecialworkspace          # show/hide special workspace",
+          "_verb": "togglespecialworkspace          # show/hide special workspace",
+          "_param": "",
+          "_mods": "Super",
+          "_mainKey": "Y"
+        },
+        {
+          "keys": "Super + LEFT",
+          "desc": "movefocus l",
+          "_verb": "movefocus",
+          "_param": "l",
+          "_mods": "Super",
+          "_mainKey": "LEFT"
+        },
+        {
+          "keys": "Super + RIGHT",
+          "desc": "movefocus r",
+          "_verb": "movefocus",
+          "_param": "r",
+          "_mods": "Super",
+          "_mainKey": "RIGHT"
+        },
+        {
+          "keys": "Super + UP",
+          "desc": "movefocus u",
+          "_verb": "movefocus",
+          "_param": "u",
+          "_mods": "Super",
+          "_mainKey": "UP"
+        },
+        {
+          "keys": "Super + DOWN",
+          "desc": "movefocus d",
+          "_verb": "movefocus",
+          "_param": "d",
+          "_mods": "Super",
+          "_mainKey": "DOWN"
+        },
+        {
+          "keys": "Super + H",
+          "desc": "movefocus l",
+          "_verb": "movefocus",
+          "_param": "l",
+          "_mods": "Super",
+          "_mainKey": "H"
+        },
+        {
+          "keys": "Super + L",
+          "desc": "movefocus r",
+          "_verb": "movefocus",
+          "_param": "r",
+          "_mods": "Super",
+          "_mainKey": "L"
+        },
+        {
+          "keys": "Super + J",
+          "desc": "movefocus u",
+          "_verb": "movefocus",
+          "_param": "u",
+          "_mods": "Super",
+          "_mainKey": "J"
+        },
+        {
+          "keys": "Super + K",
+          "desc": "movefocus d",
+          "_verb": "movefocus",
+          "_param": "d",
+          "_mods": "Super",
+          "_mainKey": "K"
+        },
+        {
+          "keys": "Super + Shift + LEFT",
+          "desc": "movewindow l",
+          "_verb": "movewindow",
+          "_param": "l",
+          "_mods": "Super+Shift",
+          "_mainKey": "LEFT"
+        },
+        {
+          "keys": "Super + Shift + RIGHT",
+          "desc": "movewindow r",
+          "_verb": "movewindow",
+          "_param": "r",
+          "_mods": "Super+Shift",
+          "_mainKey": "RIGHT"
+        },
+        {
+          "keys": "Super + Shift + UP",
+          "desc": "movewindow u",
+          "_verb": "movewindow",
+          "_param": "u",
+          "_mods": "Super+Shift",
+          "_mainKey": "UP"
+        },
+        {
+          "keys": "Super + Shift + DOWN",
+          "desc": "movewindow d",
+          "_verb": "movewindow",
+          "_param": "d",
+          "_mods": "Super+Shift",
+          "_mainKey": "DOWN"
+        },
+        {
+          "keys": "Super + Shift + H",
+          "desc": "movewindow l",
+          "_verb": "movewindow",
+          "_param": "l",
+          "_mods": "Super+Shift",
+          "_mainKey": "H"
+        },
+        {
+          "keys": "Super + Shift + L",
+          "desc": "movewindow r",
+          "_verb": "movewindow",
+          "_param": "r",
+          "_mods": "Super+Shift",
+          "_mainKey": "L"
+        },
+        {
+          "keys": "Super + Shift + J",
+          "desc": "movewindow u",
+          "_verb": "movewindow",
+          "_param": "u",
+          "_mods": "Super+Shift",
+          "_mainKey": "J"
+        },
+        {
+          "keys": "Super + Shift + K",
+          "desc": "movewindow d",
+          "_verb": "movewindow",
+          "_param": "d",
+          "_mods": "Super+Shift",
+          "_mainKey": "K"
+        },
+        {
+          "keys": "Super + Ctrl + LEFT",
+          "desc": "resizeactive -10 0",
+          "_verb": "resizeactive",
+          "_param": "-10 0",
+          "_mods": "Super+Ctrl",
+          "_mainKey": "LEFT"
+        },
+        {
+          "keys": "Super + Ctrl + RIGHT",
+          "desc": "resizeactive 10 0",
+          "_verb": "resizeactive",
+          "_param": "10 0",
+          "_mods": "Super+Ctrl",
+          "_mainKey": "RIGHT"
+        },
+        {
+          "keys": "Super + Ctrl + UP",
+          "desc": "resizeactive 0 -10",
+          "_verb": "resizeactive",
+          "_param": "0 -10",
+          "_mods": "Super+Ctrl",
+          "_mainKey": "UP"
+        },
+        {
+          "keys": "Super + Ctrl + DOWN",
+          "desc": "resizeactive 0 10",
+          "_verb": "resizeactive",
+          "_param": "0 10",
+          "_mods": "Super+Ctrl",
+          "_mainKey": "DOWN"
+        },
+        {
+          "keys": "Super + Ctrl + H",
+          "desc": "resizeactive -10 0",
+          "_verb": "resizeactive",
+          "_param": "-10 0",
+          "_mods": "Super+Ctrl",
+          "_mainKey": "H"
+        },
+        {
+          "keys": "Super + Ctrl + L",
+          "desc": "resizeactive 10 0",
+          "_verb": "resizeactive",
+          "_param": "10 0",
+          "_mods": "Super+Ctrl",
+          "_mainKey": "L"
+        },
+        {
+          "keys": "Super + Ctrl + J",
+          "desc": "resizeactive 0 -10",
+          "_verb": "resizeactive",
+          "_param": "0 -10",
+          "_mods": "Super+Ctrl",
+          "_mainKey": "J"
+        },
+        {
+          "keys": "Super + Ctrl + K",
+          "desc": "resizeactive 0 10",
+          "_verb": "resizeactive",
+          "_param": "0 10",
+          "_mods": "Super+Ctrl",
+          "_mainKey": "K"
+        },
+        {
+          "keys": "Super + CODE:10",
+          "desc": "workspace 1",
+          "_verb": "workspace",
+          "_param": "1",
+          "_mods": "Super",
+          "_mainKey": "CODE:10"
+        },
+        {
+          "keys": "Super + CODE:11",
+          "desc": "workspace 2",
+          "_verb": "workspace",
+          "_param": "2",
+          "_mods": "Super",
+          "_mainKey": "CODE:11"
+        },
+        {
+          "keys": "Super + CODE:12",
+          "desc": "workspace 3",
+          "_verb": "workspace",
+          "_param": "3",
+          "_mods": "Super",
+          "_mainKey": "CODE:12"
+        },
+        {
+          "keys": "Super + CODE:13",
+          "desc": "workspace 4",
+          "_verb": "workspace",
+          "_param": "4",
+          "_mods": "Super",
+          "_mainKey": "CODE:13"
+        },
+        {
+          "keys": "Super + CODE:14",
+          "desc": "workspace 5",
+          "_verb": "workspace",
+          "_param": "5",
+          "_mods": "Super",
+          "_mainKey": "CODE:14"
+        },
+        {
+          "keys": "Super + CODE:15",
+          "desc": "workspace 6",
+          "_verb": "workspace",
+          "_param": "6",
+          "_mods": "Super",
+          "_mainKey": "CODE:15"
+        },
+        {
+          "keys": "Super + CODE:16",
+          "desc": "workspace 7",
+          "_verb": "workspace",
+          "_param": "7",
+          "_mods": "Super",
+          "_mainKey": "CODE:16"
+        },
+        {
+          "keys": "Super + CODE:17",
+          "desc": "workspace 8",
+          "_verb": "workspace",
+          "_param": "8",
+          "_mods": "Super",
+          "_mainKey": "CODE:17"
+        },
+        {
+          "keys": "Super + CODE:18",
+          "desc": "workspace 9",
+          "_verb": "workspace",
+          "_param": "9",
+          "_mods": "Super",
+          "_mainKey": "CODE:18"
+        },
+        {
+          "keys": "Super + CODE:19",
+          "desc": "workspace 10",
+          "_verb": "workspace",
+          "_param": "10",
+          "_mods": "Super",
+          "_mainKey": "CODE:19"
+        },
+        {
+          "keys": "Super + Shift + CODE:10",
+          "desc": "movetoworkspace 1",
+          "_verb": "movetoworkspace",
+          "_param": "1",
+          "_mods": "Super+Shift",
+          "_mainKey": "CODE:10"
+        },
+        {
+          "keys": "Super + Shift + CODE:11",
+          "desc": "movetoworkspace 2",
+          "_verb": "movetoworkspace",
+          "_param": "2",
+          "_mods": "Super+Shift",
+          "_mainKey": "CODE:11"
+        },
+        {
+          "keys": "Super + Shift + CODE:12",
+          "desc": "movetoworkspace 3",
+          "_verb": "movetoworkspace",
+          "_param": "3",
+          "_mods": "Super+Shift",
+          "_mainKey": "CODE:12"
+        },
+        {
+          "keys": "Super + Shift + CODE:13",
+          "desc": "movetoworkspace 4",
+          "_verb": "movetoworkspace",
+          "_param": "4",
+          "_mods": "Super+Shift",
+          "_mainKey": "CODE:13"
+        },
+        {
+          "keys": "Super + Shift + CODE:14",
+          "desc": "movetoworkspace 5",
+          "_verb": "movetoworkspace",
+          "_param": "5",
+          "_mods": "Super+Shift",
+          "_mainKey": "CODE:14"
+        },
+        {
+          "keys": "Super + Shift + CODE:15",
+          "desc": "movetoworkspace 6",
+          "_verb": "movetoworkspace",
+          "_param": "6",
+          "_mods": "Super+Shift",
+          "_mainKey": "CODE:15"
+        },
+        {
+          "keys": "Super + Shift + CODE:16",
+          "desc": "movetoworkspace 7",
+          "_verb": "movetoworkspace",
+          "_param": "7",
+          "_mods": "Super+Shift",
+          "_mainKey": "CODE:16"
+        },
+        {
+          "keys": "Super + Shift + CODE:17",
+          "desc": "movetoworkspace 8",
+          "_verb": "movetoworkspace",
+          "_param": "8",
+          "_mods": "Super+Shift",
+          "_mainKey": "CODE:17"
+        },
+        {
+          "keys": "Super + Shift + CODE:18",
+          "desc": "movetoworkspace 9",
+          "_verb": "movetoworkspace",
+          "_param": "9",
+          "_mods": "Super+Shift",
+          "_mainKey": "CODE:18"
+        },
+        {
+          "keys": "Super + Shift + CODE:19",
+          "desc": "movetoworkspace 10",
+          "_verb": "movetoworkspace",
+          "_param": "10",
+          "_mods": "Super+Shift",
+          "_mainKey": "CODE:19"
+        },
+        {
+          "keys": "Super + Ctrl + CODE:10",
+          "desc": "movetoworkspacesilent 1",
+          "_verb": "movetoworkspacesilent",
+          "_param": "1",
+          "_mods": "Super+Ctrl",
+          "_mainKey": "CODE:10"
+        },
+        {
+          "keys": "Super + Ctrl + CODE:11",
+          "desc": "movetoworkspacesilent 2",
+          "_verb": "movetoworkspacesilent",
+          "_param": "2",
+          "_mods": "Super+Ctrl",
+          "_mainKey": "CODE:11"
+        },
+        {
+          "keys": "Super + Ctrl + CODE:12",
+          "desc": "movetoworkspacesilent 3",
+          "_verb": "movetoworkspacesilent",
+          "_param": "3",
+          "_mods": "Super+Ctrl",
+          "_mainKey": "CODE:12"
+        },
+        {
+          "keys": "Super + Ctrl + CODE:13",
+          "desc": "movetoworkspacesilent 4",
+          "_verb": "movetoworkspacesilent",
+          "_param": "4",
+          "_mods": "Super+Ctrl",
+          "_mainKey": "CODE:13"
+        },
+        {
+          "keys": "Super + Ctrl + CODE:14",
+          "desc": "movetoworkspacesilent 5",
+          "_verb": "movetoworkspacesilent",
+          "_param": "5",
+          "_mods": "Super+Ctrl",
+          "_mainKey": "CODE:14"
+        },
+        {
+          "keys": "Super + Ctrl + CODE:15",
+          "desc": "movetoworkspacesilent 6",
+          "_verb": "movetoworkspacesilent",
+          "_param": "6",
+          "_mods": "Super+Ctrl",
+          "_mainKey": "CODE:15"
+        },
+        {
+          "keys": "Super + Ctrl + CODE:16",
+          "desc": "movetoworkspacesilent 7",
+          "_verb": "movetoworkspacesilent",
+          "_param": "7",
+          "_mods": "Super+Ctrl",
+          "_mainKey": "CODE:16"
+        },
+        {
+          "keys": "Super + Ctrl + CODE:17",
+          "desc": "movetoworkspacesilent 8",
+          "_verb": "movetoworkspacesilent",
+          "_param": "8",
+          "_mods": "Super+Ctrl",
+          "_mainKey": "CODE:17"
+        },
+        {
+          "keys": "Super + Ctrl + CODE:18",
+          "desc": "movetoworkspacesilent 9",
+          "_verb": "movetoworkspacesilent",
+          "_param": "9",
+          "_mods": "Super+Ctrl",
+          "_mainKey": "CODE:18"
+        },
+        {
+          "keys": "Super + Ctrl + CODE:19",
+          "desc": "movetoworkspacesilent 10",
+          "_verb": "movetoworkspacesilent",
+          "_param": "10",
+          "_mods": "Super+Ctrl",
+          "_mainKey": "CODE:19"
+        },
+        {
+          "keys": "Super + I",
+          "desc": "swapactiveworkspaces current +1",
+          "_verb": "swapactiveworkspaces",
+          "_param": "current +1",
+          "_mods": "Super",
+          "_mainKey": "I"
+        },
+        {
+          "keys": "Super + Scroll Down",
+          "desc": "workspace current+1",
+          "_verb": "workspace",
+          "_param": "current+1",
+          "_mods": "Super",
+          "_mainKey": "MOUSE_DOWN"
+        },
+        {
+          "keys": "Super + Scroll Up",
+          "desc": "workspace current-1",
+          "_verb": "workspace",
+          "_param": "current-1",
+          "_mods": "Super",
+          "_mainKey": "MOUSE_UP"
+        },
+        {
+          "keys": "Super + Left Click",
+          "desc": "movewindow",
+          "_verb": "movewindow",
+          "_param": "",
+          "_mods": "Super",
+          "_mainKey": "MOUSE:272"
+        },
+        {
+          "keys": "Super + Right Click",
+          "desc": "resizewindow",
+          "_verb": "resizewindow",
+          "_param": "",
+          "_mods": "Super",
+          "_mainKey": "MOUSE:273"
+        },
+        {
+          "keys": "PrtSc",
+          "desc": "exec screenshot fullscreen                           # full screen",
+          "_verb": "exec",
+          "_param": "screenshot fullscreen                           # full screen",
+          "_mods": "",
+          "_mainKey": "PRINT"
+        },
+        {
+          "keys": "Ctrl + PrtSc",
+          "desc": "exec screenshot display                       # focused display",
+          "_verb": "exec",
+          "_param": "screenshot display                       # focused display",
+          "_mods": "Ctrl",
+          "_mainKey": "PRINT"
+        },
+        {
+          "keys": "Super + Shift + Ctrl + PrtSc",
+          "desc": "exec screenshot focused        # focused window",
+          "_verb": "exec",
+          "_param": "screenshot focused        # focused window",
+          "_mods": "Super+Shift+Ctrl",
+          "_mainKey": "PRINT"
+        },
+        {
+          "keys": "Shift + Ctrl + PrtSc",
+          "desc": "exec screenshot region                # or selected region w/o swappy",
+          "_verb": "exec",
+          "_param": "screenshot region                # or selected region w/o swappy",
+          "_mods": "Shift+Ctrl",
+          "_mainKey": "PRINT"
+        },
+        {
+          "keys": "Super + Shift + S",
+          "desc": "exec screenshot region                # or selected region w/o swappy",
+          "_verb": "exec",
+          "_param": "screenshot region                # or selected region w/o swappy",
+          "_mods": "Super+Shift",
+          "_mainKey": "S"
+        },
+        {
+          "keys": "Super + Vol Up",
+          "desc": "exec $term pulsemixer",
+          "_verb": "exec",
+          "_param": "$term pulsemixer",
+          "_mods": "Super",
+          "_mainKey": "XF86AUDIORAISEVOLUME"
+        },
+        {
+          "keys": "Super + Vol Down",
+          "desc": "exec $term pulsemixer",
+          "_verb": "exec",
+          "_param": "$term pulsemixer",
+          "_mods": "Super",
+          "_mainKey": "XF86AUDIOLOWERVOLUME"
+        },
+        {
+          "keys": "CODE:156",
+          "desc": "exec ~/.local/bin/monitor_mode_switcher t",
+          "_verb": "exec",
+          "_param": "~/.local/bin/monitor_mode_switcher t",
+          "_mods": "",
+          "_mainKey": "CODE:156"
+        },
+        {
+          "keys": "Vol Up",
+          "desc": "exec $ipc volume increase",
+          "_verb": "exec",
+          "_param": "$ipc volume increase",
+          "_mods": "",
+          "_mainKey": "XF86AUDIORAISEVOLUME"
+        },
+        {
+          "keys": "Vol Down",
+          "desc": "exec $ipc volume decrease",
+          "_verb": "exec",
+          "_param": "$ipc volume decrease",
+          "_mods": "",
+          "_mainKey": "XF86AUDIOLOWERVOLUME"
+        },
+        {
+          "keys": "Mute",
+          "desc": "exec $ipc volume muteOutput",
+          "_verb": "exec",
+          "_param": "$ipc volume muteOutput",
+          "_mods": "",
+          "_mainKey": "XF86AUDIOMUTE"
+        },
+        {
+          "keys": "Bright Up",
+          "desc": "exec $ipc brightness increase",
+          "_verb": "exec",
+          "_param": "$ipc brightness increase",
+          "_mods": "",
+          "_mainKey": "XF86MONBRIGHTNESSUP"
+        },
+        {
+          "keys": "Bright Down",
+          "desc": "exec $ipc brightness decrease",
+          "_verb": "exec",
+          "_param": "$ipc brightness decrease",
+          "_mods": "",
+          "_mainKey": "XF86MONBRIGHTNESSDOWN"
+        },
+        {
+          "keys": "Play",
+          "desc": "exec playerctl play-pause # Audio play pause",
+          "_verb": "exec",
+          "_param": "playerctl play-pause # Audio play pause",
+          "_mods": "",
+          "_mainKey": "XF86AUDIOPLAY"
+        },
+        {
+          "keys": "Pause",
+          "desc": "exec playerctl pause # Audio pause",
+          "_verb": "exec",
+          "_param": "playerctl pause # Audio pause",
+          "_mods": "",
+          "_mainKey": "XF86AUDIOPAUSE"
+        },
+        {
+          "keys": "Next",
+          "desc": "exec playerctl next # Audio next",
+          "_verb": "exec",
+          "_param": "playerctl next # Audio next",
+          "_mods": "",
+          "_mainKey": "XF86AUDIONEXT"
+        },
+        {
+          "keys": "Prev",
+          "desc": "exec playerctl previous # Audio previous",
+          "_verb": "exec",
+          "_param": "playerctl previous # Audio previous",
+          "_mods": "",
+          "_mainKey": "XF86AUDIOPREV"
+        },
+        {
+          "keys": "XF86LOCK",
+          "desc": "exec systemctl suspend-then-hibernate",
+          "_verb": "exec",
+          "_param": "systemctl suspend-then-hibernate",
+          "_mods": "",
+          "_mainKey": "XF86LOCK"
+        },
+        {
+          "keys": "Super + R",
+          "desc": "submap resize",
+          "_verb": "submap",
+          "_param": "resize",
+          "_mods": "Super",
+          "_mainKey": "R"
+        },
+        {
+          "keys": "L",
+          "desc": "resizeactive 10 0",
+          "_verb": "resizeactive",
+          "_param": "10 0",
+          "_mods": "",
+          "_mainKey": "L"
+        },
+        {
+          "keys": "H",
+          "desc": "resizeactive -10 0",
+          "_verb": "resizeactive",
+          "_param": "-10 0",
+          "_mods": "",
+          "_mainKey": "H"
+        },
+        {
+          "keys": "J",
+          "desc": "resizeactive 0 -10",
+          "_verb": "resizeactive",
+          "_param": "0 -10",
+          "_mods": "",
+          "_mainKey": "J"
+        },
+        {
+          "keys": "K",
+          "desc": "resizeactive 0 10",
+          "_verb": "resizeactive",
+          "_param": "0 10",
+          "_mods": "",
+          "_mainKey": "K"
+        },
+        {
+          "keys": "LEFT",
+          "desc": "resizeactive -10 0",
+          "_verb": "resizeactive",
+          "_param": "-10 0",
+          "_mods": "",
+          "_mainKey": "LEFT"
+        },
+        {
+          "keys": "RIGHT",
+          "desc": "resizeactive 10 0",
+          "_verb": "resizeactive",
+          "_param": "10 0",
+          "_mods": "",
+          "_mainKey": "RIGHT"
+        },
+        {
+          "keys": "UP",
+          "desc": "resizeactive 0 -10",
+          "_verb": "resizeactive",
+          "_param": "0 -10",
+          "_mods": "",
+          "_mainKey": "UP"
+        },
+        {
+          "keys": "DOWN",
+          "desc": "resizeactive 0 10",
+          "_verb": "resizeactive",
+          "_param": "0 10",
+          "_mods": "",
+          "_mainKey": "DOWN"
+        },
+        {
+          "keys": "CATCHALL",
+          "desc": "submap reset",
+          "_verb": "submap",
+          "_param": "reset",
+          "_mods": "",
+          "_mainKey": "CATCHALL"
+        }
+      ]
+    }
+  ],
+  "detectedCompositor": "hyprland",
+  "windowWidth": 1400,
+  "windowHeight": 850,
+  "autoHeight": true,
+  "columnCount": 3,
+  "modKeyVariable": "$mod",
+  "hyprlandConfigPath": "~/.config/hypr/hyprland.conf",
+  "hyprlandLuaConfigPath": "~/.config/hypr/hyprland.lua",
+  "hyprlandParserMode": "auto",
+  "niriConfigPath": "~/.config/niri/config.kdl",
+  "mangoConfigPath": "~/.config/mango/config.conf",
+  "mergeSequentialBinds": true,
+  "showUndescribedBinds": true,
+  "splitLargeWorkspaceCategory": true,
+  "workspaceSplitThreshold": 12,
+  "keyColorAlt": "#FF6B6B",
+  "keyColorXF86": "#4ECDC4",
+  "keyColorPrint": "#95E1D3",
+  "keyColorNumeric": "#A8DADC",
+  "keyColorMouse": "#F38181",
+  "keyColorSuper": "",
+  "keyColorCtrl": "",
+  "keyColorShift": "",
+  "keyColorDefault": "#6C757D",
+  "keyLabelColor": "#FFFFFF",
+  "keyTextSuper": "",
+  "keyTextCtrl": "",
+  "keyTextShift": "",
+  "keyTextAlt": "",
+  "keyTextXF86": "",
+  "keyTextPrint": "",
+  "keyTextNumeric": "",
+  "keyTextMouse": "",
+  "keyTextDefault": "",
+  "descriptionTextColor": "#E0E0E0",
+  "bindOverrides": {}
+}

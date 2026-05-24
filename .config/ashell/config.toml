@@ -1,4 +1,4 @@
-log_level = "warn"
+log_level = "info"
 outputs = "All"
 enable_esc_key = true
 
@@ -78,6 +78,18 @@ logout_cmd = "loginctl kill-user $(whoami)"
 
 remove_airplane_btn = true
 remove_idle_btn = false
+max_volume = 150
+volume_step = 5
+battery_format = "IconAndPercentage"
+battery_hide_when_full = true
+peripheral_battery_format = "Icon"
+peripheral_indicators = { Specific = ["Gamepad", "Keyboard"] }
+audio_indicator_format = "Icon"
+microphone_indicator_format = "Icon"
+network_indicator_format = "Icon"
+bluetooth_indicator_format = "Icon"
+brightness_indicator_format = "Percentage"
+
 
 indicators = [
   "Audio",
@@ -94,6 +106,14 @@ name = "Keyboard"
 icon = "⌨️"
 command = "osk_toggle"
 status_command = "gsettings get org.gnome.desktop.a11y.applications screen-keyboard-enabled | grep true"
+
+[osd]
+enabled = true
+timeout = 1500
+show_volume_percentage = true
+
+[animations]
+enabled = true # disabled by default
 
 [appearance]
 style = "Islands"

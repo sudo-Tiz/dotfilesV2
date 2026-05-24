@@ -2,6 +2,6 @@
 RootPath[$e]=$HOME/music
 
 [Views]
-SortOrderPreferences=Track==AscendingOrder
-SortRolePreferences=Track==GenreRole
-ViewStylePreferences=Album==ListStyle
+SortOrderPreferences=Track==DescendingOrder
+SortRolePreferences=Track==FileModificationTime
+ViewStylePreferences=Album==ListStyle,FileName==ListStyle
