@@ -566,7 +566,7 @@
         "enableMediaToast": false,
         "enabled": true,
         "location": "top_right",
-        "lowUrgencyDuration": 2,
+        "lowUrgencyDuration": 3,
         "monitors": [
         ],
         "normalUrgencyDuration": 5,
@@ -597,7 +597,7 @@
             2,
             3
         ],
-        "location": "top_right",
+        "location": "bottom",
         "monitors": [
         ],
         "overlayLayer": true
@@ -685,7 +685,7 @@
         "diskCriticalThreshold": 90,
         "diskWarningThreshold": 80,
         "enableDgpuMonitoring": false,
-        "externalMonitor": "foot -e htop",
+        "externalMonitor": "foot -e btop",
         "gpuCriticalThreshold": 90,
         "gpuWarningThreshold": 80,
         "memCriticalThreshold": 90,
@@ -710,6 +710,30 @@
             {
                 "enabled": true,
                 "id": "hyprland"
+            },
+            {
+                "enabled": true,
+                "id": "gtk"
+            },
+            {
+                "enabled": true,
+                "id": "qt"
+            },
+            {
+                "enabled": true,
+                "id": "steam"
+            },
+            {
+                "enabled": true,
+                "id": "zathura"
+            },
+            {
+                "enabled": true,
+                "id": "starship"
+            },
+            {
+                "enabled": true,
+                "id": "btop"
             }
         ],
         "enableUserTheming": false
