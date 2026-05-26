@@ -4,68 +4,52 @@
       "title": "Keybinds",
       "binds": [
         {
-          "keys": "Super + TAB",
-          "desc": "exec qs -c noctalia-shell ipc call plugin:workspace-overview toggle",
-          "_verb": "exec",
-          "_param": "qs -c noctalia-shell ipc call plugin:workspace-overview toggle",
-          "_mods": "Super",
-          "_mainKey": "TAB"
-        },
-        {
-          "keys": "Super + S",
-          "desc": "exec",
-          "_verb": "exec",
-          "_param": "",
-          "_mods": "Super",
-          "_mainKey": "S"
-        },
-        {
-          "keys": "Super + COMMA",
-          "desc": "exec $ipc settings toggle",
-          "_verb": "exec",
-          "_param": "$ipc settings toggle",
-          "_mods": "Super",
-          "_mainKey": "COMMA"
-        },
-        {
-          "keys": "Super + D",
+          "keys": "Super + A",
           "desc": "exec $ipc launcher toggle",
           "_verb": "exec",
           "_param": "$ipc launcher toggle",
           "_mods": "Super",
-          "_mainKey": "D"
+          "_mainKey": "A"
+        },
+        {
+          "keys": "Super + X",
+          "desc": "exec $term",
+          "_verb": "exec",
+          "_param": "$term",
+          "_mods": "Super",
+          "_mainKey": "X"
+        },
+        {
+          "keys": "Super + RETURN",
+          "desc": "exec $term",
+          "_verb": "exec",
+          "_param": "$term",
+          "_mods": "Super",
+          "_mainKey": "RETURN"
         },
         {
           "keys": "Super + W",
-          "desc": "exec $browser",
+          "desc": "exec brave",
           "_verb": "exec",
-          "_param": "$browser",
+          "_param": "brave",
           "_mods": "Super",
           "_mainKey": "W"
         },
         {
           "keys": "Super + Shift + W",
-          "desc": "exec qutebrowser",
+          "desc": "exec tor-browser",
           "_verb": "exec",
-          "_param": "qutebrowser",
+          "_param": "tor-browser",
           "_mods": "Super+Shift",
           "_mainKey": "W"
         },
         {
           "keys": "Super + Ctrl + W",
-          "desc": "exec tor-browser",
+          "desc": "exec $term newsboat",
           "_verb": "exec",
-          "_param": "tor-browser",
+          "_param": "$term newsboat",
           "_mods": "Super+Ctrl",
           "_mainKey": "W"
-        },
-        {
-          "keys": "Super + C",
-          "desc": "exec $ipc controlCenter toggle",
-          "_verb": "exec",
-          "_param": "$ipc controlCenter toggle",
-          "_mods": "Super",
-          "_mainKey": "C"
         },
         {
           "keys": "Super + E",
@@ -100,102 +84,6 @@
           "_mainKey": "M"
         },
         {
-          "keys": "Super + V",
-          "desc": "exec $ipc launcher clipboard",
-          "_verb": "exec",
-          "_param": "$ipc launcher clipboard",
-          "_mods": "Super",
-          "_mainKey": "V"
-        },
-        {
-          "keys": "Super + Shift + C",
-          "desc": "exec dmenulink",
-          "_verb": "exec",
-          "_param": "dmenulink",
-          "_mods": "Super+Shift",
-          "_mainKey": "C"
-        },
-        {
-          "keys": "Super + Shift + D",
-          "desc": "exec bwmenu",
-          "_verb": "exec",
-          "_param": "bwmenu",
-          "_mods": "Super+Shift",
-          "_mainKey": "D"
-        },
-        {
-          "keys": "Super + A",
-          "desc": "exec pkill wofi || wofi -f -i -m -S run -w 4 # -W 100% -H 97%         #TODO: better integ",
-          "_verb": "exec",
-          "_param": "pkill wofi || wofi -f -i -m -S run -w 4 # -W 100% -H 97%         #TODO: better integ",
-          "_mods": "Super",
-          "_mainKey": "A"
-        },
-        {
-          "keys": "Super + Shift + A",
-          "desc": "exec pkill wofi || wofi -f -I -i -m -S drun -w 4 # -W 100% -H 97%",
-          "_verb": "exec",
-          "_param": "pkill wofi || wofi -f -I -i -m -S drun -w 4 # -W 100% -H 97%",
-          "_mods": "Super+Shift",
-          "_mainKey": "A"
-        },
-        {
-          "keys": "Super + X",
-          "desc": "exec $term",
-          "_verb": "exec",
-          "_param": "$term",
-          "_mods": "Super",
-          "_mainKey": "X"
-        },
-        {
-          "keys": "Super + RETURN",
-          "desc": "exec $term",
-          "_verb": "exec",
-          "_param": "$term",
-          "_mods": "Super",
-          "_mainKey": "RETURN"
-        },
-        {
-          "keys": "Super + N",
-          "desc": "exec $term newsboat",
-          "_verb": "exec",
-          "_param": "$term newsboat",
-          "_mods": "Super",
-          "_mainKey": "N"
-        },
-        {
-          "keys": "Super + O",
-          "desc": "exec signal-desktop",
-          "_verb": "exec",
-          "_param": "signal-desktop",
-          "_mods": "Super",
-          "_mainKey": "O"
-        },
-        {
-          "keys": "Super + B",
-          "desc": "exec blueman-manager",
-          "_verb": "exec",
-          "_param": "blueman-manager",
-          "_mods": "Super",
-          "_mainKey": "B"
-        },
-        {
-          "keys": "Super + BACKSPACE",
-          "desc": "exec sysact",
-          "_verb": "exec",
-          "_param": "sysact",
-          "_mods": "Super",
-          "_mainKey": "BACKSPACE"
-        },
-        {
-          "keys": "Super + U",
-          "desc": "exec dmenuunicode",
-          "_verb": "exec",
-          "_param": "dmenuunicode",
-          "_mods": "Super",
-          "_mainKey": "U"
-        },
-        {
           "keys": "Super + T",
           "desc": "exec $editor ~/Notes/todo.md",
           "_verb": "exec",
@@ -212,52 +100,100 @@
           "_mainKey": "T"
         },
         {
-          "keys": "Super + Z",
-          "desc": "exec hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor * 1.25}')\"",
+          "keys": "Super + Shift + D",
+          "desc": "exec bwmenu",
           "_verb": "exec",
-          "_param": "hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor * 1.25}')\"",
-          "_mods": "Super",
-          "_mainKey": "Z"
-        },
-        {
-          "keys": "Super + Shift + Z",
-          "desc": "exec hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor / 1.25}')\"",
-          "_verb": "exec",
-          "_param": "hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor / 1.25}')\"",
+          "_param": "bwmenu",
           "_mods": "Super+Shift",
-          "_mainKey": "Z"
+          "_mainKey": "D"
         },
         {
-          "keys": "Super + Shift + Scroll Down",
-          "desc": "exec hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor * 1.25}')\"",
+          "keys": "Super + U",
+          "desc": "exec $ipc launcher emoji",
           "_verb": "exec",
-          "_param": "hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor * 1.25}')\"",
-          "_mods": "Super+Shift",
-          "_mainKey": "MOUSE_DOWN"
+          "_param": "$ipc launcher emoji",
+          "_mods": "Super",
+          "_mainKey": "U"
         },
         {
-          "keys": "Super + Shift + Scroll Up",
-          "desc": "exec hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor / 1.25}')\"",
+          "keys": "Super + O",
+          "desc": "exec signal-desktop",
           "_verb": "exec",
-          "_param": "hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor / 1.25}')\"",
+          "_param": "signal-desktop",
+          "_mods": "Super",
+          "_mainKey": "O"
+        },
+        {
+          "keys": "Super + N",
+          "desc": "exec $ipc network togglePanel",
+          "_verb": "exec",
+          "_param": "$ipc network togglePanel",
+          "_mods": "Super",
+          "_mainKey": "N"
+        },
+        {
+          "keys": "Super + B",
+          "desc": "exec $ipc bluetooth togglePanel",
+          "_verb": "exec",
+          "_param": "$ipc bluetooth togglePanel",
+          "_mods": "Super",
+          "_mainKey": "B"
+        },
+        {
+          "keys": "Super + Shift + B",
+          "desc": "exec blueman-manager",
+          "_verb": "exec",
+          "_param": "blueman-manager",
           "_mods": "Super+Shift",
-          "_mainKey": "MOUSE_UP"
+          "_mainKey": "B"
         },
         {
-          "keys": "Super + F",
-          "desc": "fullscreen",
-          "_verb": "fullscreen",
-          "_param": "",
+          "keys": "Super + C",
+          "desc": "exec $ipc plugin:noctalia-calculator toggle",
+          "_verb": "exec",
+          "_param": "$ipc plugin:noctalia-calculator toggle",
           "_mods": "Super",
-          "_mainKey": "F"
+          "_mainKey": "C"
         },
         {
-          "keys": "Super + S",
-          "desc": "pin",
-          "_verb": "pin",
-          "_param": "",
+          "keys": "Super + COMMA",
+          "desc": "exec $ipc settings toggle",
+          "_verb": "exec",
+          "_param": "$ipc settings toggle",
           "_mods": "Super",
-          "_mainKey": "S"
+          "_mainKey": "COMMA"
+        },
+        {
+          "keys": "Super + Shift + A",
+          "desc": "exec $ipc plugin:keybind-cheatsheet toggle",
+          "_verb": "exec",
+          "_param": "$ipc plugin:keybind-cheatsheet toggle",
+          "_mods": "Super+Shift",
+          "_mainKey": "A"
+        },
+        {
+          "keys": "Super + V",
+          "desc": "exec $ipc launcher clipboard",
+          "_verb": "exec",
+          "_param": "$ipc launcher clipboard",
+          "_mods": "Super",
+          "_mainKey": "V"
+        },
+        {
+          "keys": "Super + Shift + V",
+          "desc": "exec dmenulink",
+          "_verb": "exec",
+          "_param": "dmenulink",
+          "_mods": "Super+Shift",
+          "_mainKey": "V"
+        },
+        {
+          "keys": "Super + BACKSPACE",
+          "desc": "exec $ipc sessionMenu toggle",
+          "_verb": "exec",
+          "_param": "$ipc sessionMenu toggle",
+          "_mods": "Super",
+          "_mainKey": "BACKSPACE"
         },
         {
           "keys": "Super + Q",
@@ -276,12 +212,28 @@
           "_mainKey": "Q"
         },
         {
-          "keys": "Super + G",
-          "desc": "exec hyprfreeze -a",
-          "_verb": "exec",
-          "_param": "hyprfreeze -a",
+          "keys": "Super + F",
+          "desc": "fullscreen",
+          "_verb": "fullscreen",
+          "_param": "",
           "_mods": "Super",
-          "_mainKey": "G"
+          "_mainKey": "F"
+        },
+        {
+          "keys": "Super + Shift + F",
+          "desc": "exec $ipc bar toggle",
+          "_verb": "exec",
+          "_param": "$ipc bar toggle",
+          "_mods": "Super+Shift",
+          "_mainKey": "F"
+        },
+        {
+          "keys": "Super + S",
+          "desc": "pin",
+          "_verb": "pin",
+          "_param": "",
+          "_mods": "Super",
+          "_mainKey": "S"
         },
         {
           "keys": "Super + SPACE",
@@ -292,28 +244,36 @@
           "_mainKey": "SPACE"
         },
         {
-          "keys": "Super + ASTERISK",
-          "desc": "exec hyprctl reload      # reload Hyprland",
+          "keys": "Super + G",
+          "desc": "exec hyprfreeze -a",
           "_verb": "exec",
-          "_param": "hyprctl reload      # reload Hyprland",
+          "_param": "hyprfreeze -a",
+          "_mods": "Super",
+          "_mainKey": "G"
+        },
+        {
+          "keys": "Super + ASTERISK",
+          "desc": "exec hyprctl reload",
+          "_verb": "exec",
+          "_param": "hyprctl reload",
           "_mods": "Super",
           "_mainKey": "ASTERISK"
         },
         {
-          "keys": "Super + Shift + Y",
-          "desc": "movetoworkspace special  # move to the special workspace",
+          "keys": "Alt + TAB",
+          "desc": "movetoworkspace special",
           "_verb": "movetoworkspace",
-          "_param": "special  # move to the special workspace",
-          "_mods": "Super+Shift",
-          "_mainKey": "Y"
+          "_param": "special",
+          "_mods": "Alt",
+          "_mainKey": "TAB"
         },
         {
-          "keys": "Super + Y",
-          "desc": "togglespecialworkspace          # show/hide special workspace",
-          "_verb": "togglespecialworkspace          # show/hide special workspace",
+          "keys": "Super + TAB",
+          "desc": "togglespecialworkspace",
+          "_verb": "togglespecialworkspace",
           "_param": "",
           "_mods": "Super",
-          "_mainKey": "Y"
+          "_mainKey": "TAB"
         },
         {
           "keys": "Super + LEFT",
@@ -788,68 +748,76 @@
           "_mainKey": "MOUSE:273"
         },
         {
-          "keys": "PrtSc",
-          "desc": "exec screenshot fullscreen                           # full screen",
+          "keys": "Super + Z",
+          "desc": "exec hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor * 1.25}')\"",
           "_verb": "exec",
-          "_param": "screenshot fullscreen                           # full screen",
+          "_param": "hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor * 1.25}')\"",
+          "_mods": "Super",
+          "_mainKey": "Z"
+        },
+        {
+          "keys": "Super + Shift + Z",
+          "desc": "exec hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor / 1.25}')\"",
+          "_verb": "exec",
+          "_param": "hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor / 1.25}')\"",
+          "_mods": "Super+Shift",
+          "_mainKey": "Z"
+        },
+        {
+          "keys": "Super + Shift + Scroll Down",
+          "desc": "exec hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor * 1.25}')\"",
+          "_verb": "exec",
+          "_param": "hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor * 1.25}')\"",
+          "_mods": "Super+Shift",
+          "_mainKey": "MOUSE_DOWN"
+        },
+        {
+          "keys": "Super + Shift + Scroll Up",
+          "desc": "exec hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor / 1.25}')\"",
+          "_verb": "exec",
+          "_param": "hyprctl keyword cursor:zoom_factor \"$(hyprctl getoption cursor:zoom_factor | awk 'NR==1 {factor = $2; if (factor < 1) {factor = 1}; print factor / 1.25}')\"",
+          "_mods": "Super+Shift",
+          "_mainKey": "MOUSE_UP"
+        },
+        {
+          "keys": "PrtSc",
+          "desc": "exec screenshot fullscreen",
+          "_verb": "exec",
+          "_param": "screenshot fullscreen",
           "_mods": "",
           "_mainKey": "PRINT"
         },
         {
           "keys": "Ctrl + PrtSc",
-          "desc": "exec screenshot display                       # focused display",
+          "desc": "exec screenshot display",
           "_verb": "exec",
-          "_param": "screenshot display                       # focused display",
+          "_param": "screenshot display",
           "_mods": "Ctrl",
           "_mainKey": "PRINT"
         },
         {
           "keys": "Super + Shift + Ctrl + PrtSc",
-          "desc": "exec screenshot focused        # focused window",
+          "desc": "exec screenshot focused",
           "_verb": "exec",
-          "_param": "screenshot focused        # focused window",
+          "_param": "screenshot focused",
           "_mods": "Super+Shift+Ctrl",
           "_mainKey": "PRINT"
         },
         {
           "keys": "Shift + Ctrl + PrtSc",
-          "desc": "exec screenshot region                # or selected region w/o swappy",
+          "desc": "exec screenshot region",
           "_verb": "exec",
-          "_param": "screenshot region                # or selected region w/o swappy",
+          "_param": "screenshot region",
           "_mods": "Shift+Ctrl",
           "_mainKey": "PRINT"
         },
         {
           "keys": "Super + Shift + S",
-          "desc": "exec screenshot region                # or selected region w/o swappy",
+          "desc": "exec screenshot region",
           "_verb": "exec",
-          "_param": "screenshot region                # or selected region w/o swappy",
+          "_param": "screenshot region",
           "_mods": "Super+Shift",
           "_mainKey": "S"
-        },
-        {
-          "keys": "Super + Vol Up",
-          "desc": "exec $term pulsemixer",
-          "_verb": "exec",
-          "_param": "$term pulsemixer",
-          "_mods": "Super",
-          "_mainKey": "XF86AUDIORAISEVOLUME"
-        },
-        {
-          "keys": "Super + Vol Down",
-          "desc": "exec $term pulsemixer",
-          "_verb": "exec",
-          "_param": "$term pulsemixer",
-          "_mods": "Super",
-          "_mainKey": "XF86AUDIOLOWERVOLUME"
-        },
-        {
-          "keys": "CODE:156",
-          "desc": "exec ~/.local/bin/monitor_mode_switcher t",
-          "_verb": "exec",
-          "_param": "~/.local/bin/monitor_mode_switcher t",
-          "_mods": "",
-          "_mainKey": "CODE:156"
         },
         {
           "keys": "Vol Up",
@@ -876,6 +844,14 @@
           "_mainKey": "XF86AUDIOMUTE"
         },
         {
+          "keys": "Mic Mute",
+          "desc": "exec $ipc volume muteInput",
+          "_verb": "exec",
+          "_param": "$ipc volume muteInput",
+          "_mods": "",
+          "_mainKey": "XF86AUDIOMICMUTE"
+        },
+        {
           "keys": "Bright Up",
           "desc": "exec $ipc brightness increase",
           "_verb": "exec",
@@ -892,34 +868,50 @@
           "_mainKey": "XF86MONBRIGHTNESSDOWN"
         },
         {
-          "keys": "Play",
-          "desc": "exec playerctl play-pause # Audio play pause",
+          "keys": "Super + Vol Up",
+          "desc": "exec $term pulsemixer",
           "_verb": "exec",
-          "_param": "playerctl play-pause # Audio play pause",
+          "_param": "$term pulsemixer",
+          "_mods": "Super",
+          "_mainKey": "XF86AUDIORAISEVOLUME"
+        },
+        {
+          "keys": "Super + Vol Down",
+          "desc": "exec $term pulsemixer",
+          "_verb": "exec",
+          "_param": "$term pulsemixer",
+          "_mods": "Super",
+          "_mainKey": "XF86AUDIOLOWERVOLUME"
+        },
+        {
+          "keys": "Play",
+          "desc": "exec playerctl play-pause",
+          "_verb": "exec",
+          "_param": "playerctl play-pause",
           "_mods": "",
           "_mainKey": "XF86AUDIOPLAY"
         },
         {
           "keys": "Pause",
-          "desc": "exec playerctl pause # Audio pause",
+          "desc": "exec playerctl pause",
           "_verb": "exec",
-          "_param": "playerctl pause # Audio pause",
+          "_param": "playerctl pause",
           "_mods": "",
           "_mainKey": "XF86AUDIOPAUSE"
         },
         {
           "keys": "Next",
-          "desc": "exec playerctl next # Audio next",
+          "desc": "exec playerctl next",
           "_verb": "exec",
-          "_param": "playerctl next # Audio next",
+          "_param": "playerctl next",
           "_mods": "",
           "_mainKey": "XF86AUDIONEXT"
         },
         {
           "keys": "Prev",
-          "desc": "exec playerctl previous # Audio previous",
+          "desc": "exec playerctl previous",
           "_verb": "exec",
-          "_param": "playerctl previous # Audio previous",
+          "_param": "playerctl previous",
           "_mods": "",
           "_mainKey": "XF86AUDIOPREV"
         },
@@ -930,6 +922,14 @@
           "_param": "systemctl suspend-then-hibernate",
           "_mods": "",
           "_mainKey": "XF86LOCK"
+        },
+        {
+          "keys": "CODE:156",
+          "desc": "exec ~/.local/bin/monitor_mode_switcher t",
+          "_verb": "exec",
+          "_param": "~/.local/bin/monitor_mode_switcher t",
+          "_mods": "",
+          "_mainKey": "CODE:156"
         },
         {
           "keys": "Super + R",
