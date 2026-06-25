@@ -6,7 +6,7 @@
         "clipboardWrapText": true,
         "customLaunchPrefix": "",
         "customLaunchPrefixEnabled": false,
-        "density": "comfortable",
+        "density": "default",
         "enableClipPreview": true,
         "enableClipboardChips": true,
         "enableClipboardHistory": true,
@@ -14,14 +14,14 @@
         "enableSessionSearch": true,
         "enableSettingsSearch": true,
         "enableWindowsSearch": true,
-        "iconMode": "tabler",
+        "iconMode": "native",
         "ignoreMouseInput": false,
         "overviewLayer": false,
         "pinnedApps": [
         ],
         "position": "top_left",
         "screenshotAnnotationTool": "",
-        "showCategories": false,
+        "showCategories": true,
         "showIconBackground": false,
         "sortByMostUsed": true,
         "terminalCommand": "foot -e",
@@ -298,7 +298,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Tokyo Night",
+        "predefinedScheme": "Noctalia (default)",
         "schedulingMode": "off",
         "syncGsettings": true,
         "useWallpaperColors": false
@@ -539,13 +539,13 @@
         "bluetoothRssiPollIntervalMs": 60000,
         "bluetoothRssiPollingEnabled": false,
         "disableDiscoverability": false,
-        "networkPanelView": "wifi",
+        "networkPanelView": "ethernet",
         "wifiDetailsViewMode": "grid"
     },
     "nightLight": {
         "autoSchedule": true,
         "dayTemp": "6500",
-        "enabled": true,
+        "enabled": false,
         "forced": false,
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
@@ -705,19 +705,7 @@
             },
             {
                 "enabled": true,
-                "id": "foot"
-            },
-            {
-                "enabled": true,
-                "id": "hyprland"
-            },
-            {
-                "enabled": true,
                 "id": "gtk"
-            },
-            {
-                "enabled": true,
-                "id": "qt"
             },
             {
                 "enabled": true,
@@ -729,14 +717,22 @@
             },
             {
                 "enabled": true,
-                "id": "starship"
+                "id": "btop"
             },
             {
                 "enabled": true,
-                "id": "btop"
+                "id": "foot"
+            },
+            {
+                "enabled": true,
+                "id": "qt"
+            },
+            {
+                "enabled": true,
+                "id": "hyprland"
             }
         ],
-        "enableUserTheming": false
+        "enableUserTheming": true
     },
     "ui": {
         "boxBorderEnabled": false,
