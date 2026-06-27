@@ -1,22 +1,59 @@
 #!/bin/sh
+set -eu
 
-for _ in 1 2 3 4 5; do
-  if ping -c 1 9.9.9.9 >/dev/null 2>&1; then
-    pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Desk" >/dev/null || rclone --vfs-cache-mode writes mount tizcloud:/Desk ~/cloud &
-    pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Documents" >/dev/null || rclone --vfs-cache-mode writes mount tizcloud:/Documents ~/documents &
-    pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Images" >/dev/null || rclone --vfs-cache-mode writes mount tizcloud:/Images ~/images &
-    pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Notes" >/dev/null || rclone --vfs-cache-mode writes mount tizcloud:/Notes ~/Notes &
-    # pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Templates" || setsid rclone --vfs-cache-mode writes mount "tizcloud":/Templates ~/Templates &
-    # pgrep -f "rclone --vfs-cache-mode writes mount tizcloud:/Musiques" || setsid rclone --vfs-cache-mode writes mount "tizcloud":/Musiques ~/musiques &
-    break
+MOUNT_BASE="$HOME"
+ITEMS="
+tizcloud:/Desk|$MOUNT_BASE/cloud
+tizcloud:/Documents|$MOUNT_BASE/documents
+tizcloud:/Images|$MOUNT_BASE/images
+tizcloud:/Notes|$MOUNT_BASE/notes
+"
+
+wait_for_network() {
+  # Prefer nm-online
+  if command -v nm-online >/dev/null 2>&1; then
+    nm-online -q --timeout=60
+    return $?
   fi
-  sleep 5
+
+  # Fallback ping
+  for _ in 1 2 3 4 5 6; do
+    ping -c1 -W1 9.9.9.9 >/dev/null 2>&1 && return 0
+    sleep 2
+  done
+  return 1
+}
+
+is_mounted() {
+  mountpoint -q "$1"
+}
+
+start_mount() {
+  remote_path="$1"
+  mount_point="$2"
+
+  mkdir -p "$mount_point"
+
+  if is_mounted "$mount_point"; then
+    return 0
+  fi
+
+  # evite doublons
+  pgrep -f "rclone .*mount.*${remote_path//\//\\/}.*${mount_point//\//\\/}" >/dev/null 2>&1 && return 0
+
+  rclone \
+    --vfs-cache-mode writes \
+    --retries 10 --low-level-retries 50 \
+    --timeout 60s --contimeout 60s \
+    --transfers 8 --checkers 16 \
+    mount "${remote_path}" "${mount_point}" &
+
+  sleep 1
+}
+
+wait_for_network
+
+echo "$ITEMS" | while IFS='|' read -r remote_path mount_point; do
+  [ -n "$remote_path" ] || continue
+  start_mount "$remote_path" "$mount_point"
 done
-# pgrep -f "inotifywait.*notes" >/dev/null || while inotifywait -r -e modify,create,delete --exclude '.*~$|.*/[0-9]+$' ~/notes; do
-#   sleep 5
-#   rclone bisync tizcloud:/Notes ~/notes --resync
-# done &
-# pgrep -f "inotifywait.*Notes" >/dev/null || while inotifywait -r -e modify,create,delete --exclude '.*~$|.*/[0-9]+$' ~/Notes; do
-#   sleep 5
-#   rclone bisync tizcloud:/Notes ~/notes --resync
-# done &

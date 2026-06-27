@@ -45,7 +45,7 @@ hl.config({
 
 	dwindle = {
 		preserve_split = true,
-		smart_split = true,
+		smart_split = false,
 		smart_resizing = true,
 		force_split = 0,
 		special_scale_factor = 1.0,
@@ -158,13 +158,12 @@ hl.exec_cmd("/usr/lib/hyprpolkitagent/hyprpolkitagent")
 hl.on("hyprland.start", function()
 	hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+	hl.exec_cmd("qs -c noctalia-shell")
 	hl.exec_cmd("squeekboard")
-	hl.exec_cmd("~/.local/bin/rcloud")
 	hl.exec_cmd("iio-hyprland")
 	hl.exec_cmd("wl-paste --type text --watch cliphist store")
 	hl.exec_cmd("wl-paste --type image --watch cliphist store")
 	hl.exec_cmd("hypridle")
-	hl.exec_cmd("qs -c noctalia-shell")
 end)
 
 -- ╔══════════════════════════════════════════════════════════════════════╗

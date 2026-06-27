@@ -1,0 +1,13 @@
+[Unit]
+Description=Run notes sync every 10 minutes
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=10min
+AccuracySec=10s
+Persistent=true
+Unit=rnotes-sync.service
+
+[Install]
+WantedBy=timers.target
+

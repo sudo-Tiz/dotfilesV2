@@ -1,0 +1,10 @@
+[Unit]
+Description=Mount rclone personal folders when network is online
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -lc 'nm-online -q --timeout=60 && %h/.local/bin/rcloud'
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target

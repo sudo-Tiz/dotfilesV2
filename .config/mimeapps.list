@@ -19,6 +19,11 @@ image/avif=nsxiv.desktop
 video/mp4=mpv.desktop
 video/webm=mpv.desktop
 x-scheme-handler/magnet=brave-browser.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-K90AQ3.desktop
+message/rfc822=userapp-Thunderbird-K90AQ3.desktop
+x-scheme-handler/mid=userapp-Thunderbird-K90AQ3.desktop
 
 [Added Associations]
 application/pdf=com.github.xournalpp.xournalpp.desktop;
+x-scheme-handler/mailto=userapp-Thunderbird-K90AQ3.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-K90AQ3.desktop;

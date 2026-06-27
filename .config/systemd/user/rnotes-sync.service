@@ -1,0 +1,6 @@
+[Unit]
+Description=Backup Nextcloud Notes
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -lc 'nm-online -q --timeout=60 && /usr/bin/rclone sync tizcloud:/Notes %h/.notes-backup'
