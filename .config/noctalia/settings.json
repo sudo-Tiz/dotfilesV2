@@ -725,15 +725,15 @@
             },
             {
                 "enabled": true,
-                "id": "qt"
-            },
-            {
-                "enabled": true,
                 "id": "hyprland"
             },
             {
                 "enabled": true,
                 "id": "fuzzel"
+            },
+            {
+                "enabled": true,
+                "id": "qt"
             }
         ],
         "enableUserTheming": true

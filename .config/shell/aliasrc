@@ -76,11 +76,11 @@ alias \
   fd="fd -Hi" \
   qute-clear="rm -rf ~/.local/share/qutebrowser/webengine; rm -rf ~/.cache/qutebrowser/webengine/" \
   mdtemp="cd $(mktemp -d)" \
-  tsumiki="${XDG_CONFIG_HOME:-$HOME/.config}/tsumiki/init.sh" \
   nocta="qs -c noctalia-shell ipc"
-old() { mv "$1" "$1.old"; }
-bak() { cp "$1" "$1.bak"; }
-baktar() { tar -zcvf "${1}_$(date '+%Y-%m-%d_%H-%M').tar.gz" "$1"; }
+old() { mv -- "$1" "$1.old"; }
+new(){ mv -- "${1}.old" "$1"; }
+bak() { cp -a -- "$1" "$1.bak"; }
+baktar() { tar -zcvf "${1}_$(date '+%Y-%m-%d_%H-%M').tar.gz" -- "$1"; }
 
 # DOCKER
 [ -x "$(command -v docker)" ] && alias \
