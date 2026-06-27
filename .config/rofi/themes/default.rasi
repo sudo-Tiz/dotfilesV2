@@ -1,0 +1,119 @@
+@import "noctalia.rasi"
+
+configuration {
+    font:           "Noto Sans Mono 11";
+    show-icons:     false;
+    hide-scrollbar: true;
+    markup-rows:    true;
+}
+
+window {
+    background-color: @background;
+    text-color:       @foreground;
+    border:           3px;
+    border-color:     @border;
+    border-radius:    8px;
+    width:            40%;
+    height:           60%;
+    location:         center;
+    x-offset:         0;
+    y-offset:         0;
+}
+
+mainbox {
+    background-color: @background;
+    children:         [ inputbar, listview, message ];
+    spacing:          0px;
+    padding:          0px;
+}
+
+message {
+    background-color: @background-alt;
+    text-color:       @border-alt;
+    border:           1px 0px 0px 0px;
+    border-color:     @border-alt;
+    padding:          6px 12px;
+}
+
+textbox {
+    background-color: @transparent;
+    text-color:       @border-alt;
+    horizontal-align: 0;
+    vertical-align:   0.5;
+}
+
+inputbar {
+    children:         [ prompt, entry ];
+    background-color: @border;
+    text-color:       @background;
+    border:           0px;
+    border-radius:    6px 6px 0px 0px;
+    padding:          10px 12px;
+}
+
+prompt {
+    background-color: @transparent;
+    text-color:       @background;
+    padding:          0px 8px 0px 0px;
+}
+
+entry {
+    background-color: @transparent;
+    text-color:       @background;
+    placeholder-color: @background;
+    expand:           true;
+    horizontal-align: 0;
+    blink:            true;
+}
+
+listview {
+    background-color: @background;
+    padding:          4px;
+    columns:          1;
+    spacing:          2px;
+    cycle:            false;
+    dynamic:          true;
+    layout:           vertical;
+}
+
+element {
+    background-color: @transparent;
+    text-color:       @foreground;
+    border-radius:    0px;
+    border:           0px 0px 1px 0px;
+    border-color:     @background-alt;
+    padding:          6px 10px;
+}
+
+element selected {
+    background-color: @selected;
+    text-color:       @selected-fg;
+    border-radius:    6px;
+}
+
+element alternate.normal {
+    background-color: @transparent;
+    text-color:       @foreground;
+}
+
+element alternate.urgent {
+    background-color: @transparent;
+    text-color:       @urgent;
+}
+
+element alternate.active {
+    background-color: @transparent;
+    text-color:       @foreground;
+}
+
+element urgent {
+    text-color: @urgent;
+}
+
+element-text {
+    background-color: @transparent;
+    text-color:       inherit;
+    expand:           true;
+    horizontal-align: 0;
+    vertical-align:   0.5;
+}

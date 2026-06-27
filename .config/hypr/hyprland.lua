@@ -40,6 +40,18 @@ hl.config({
 	},
 
 	-- ┌──────────────────────────────────────────────────────────────────────┐
+	-- │                          DWINDLE                                     │
+	-- └──────────────────────────────────────────────────────────────────────┘
+
+	dwindle = {
+		preserve_split = true,
+		smart_split = true,
+		smart_resizing = true,
+		force_split = 0,
+		special_scale_factor = 1.0,
+	},
+
+	-- ┌──────────────────────────────────────────────────────────────────────┐
 	-- │                          INPUT                                       │
 	-- └──────────────────────────────────────────────────────────────────────┘
 
@@ -100,6 +112,15 @@ hl.config({
 		focus_on_activate = true,
 		on_focus_under_fullscreen = 1,
 		mouse_move_focuses_monitor = true,
+	},
+
+	-- ┌──────────────────────────────────────────────────────────────────────┐
+	-- │                          MISC                                        │
+	-- └──────────────────────────────────────────────────────────────────────┘
+
+	gestures = {
+		workspace_swipe_touch = true,
+		workspace_swipe_cancel_ratio = 0.2,
 	},
 })
 
@@ -166,7 +187,7 @@ hl.bind("SUPER + M", hl.dsp.exec_cmd("thunderbird"))
 hl.bind("SUPER + SHIFT + M", hl.dsp.exec_cmd("elisa"))
 hl.bind("SUPER + T", hl.dsp.exec_cmd(editor .. " ~/Notes/todo.md"))
 hl.bind("SUPER + SHIFT + T", hl.dsp.exec_cmd(editor .. " ~/notes/all.md"))
-hl.bind("SUPER + SHIFT + D", hl.dsp.exec_cmd("bwmenu"))
+hl.bind("SUPER + SHIFT + D", hl.dsp.exec_cmd("rofi-rbw"))
 hl.bind("SUPER + U", hl.dsp.exec_cmd(ipc .. " launcher emoji"))
 hl.bind("SUPER + O", hl.dsp.exec_cmd("signal-desktop"))
 
@@ -201,8 +222,9 @@ hl.bind("SUPER + asterisk", hl.dsp.exec_cmd("hyprctl reload"))
 -- │                     SPECIAL WORKSPACE                                │
 -- └──────────────────────────────────────────────────────────────────────┘
 
-hl.bind("ALT + Tab", hl.dsp.window.move({ workspace = "special" }))
-hl.bind("SUPER + Tab", hl.dsp.workspace.toggle_special(""))
+hl.bind("ALT + Tab", hl.dsp.layout("togglesplit"))
+hl.bind("SUPER + SHIFT + Tab", hl.dsp.window.move({ workspace = "special" }))
+hl.bind("SUPER + Tab", hl.dsp.workspace.toggle_special())
 
 -- ┌──────────────────────────────────────────────────────────────────────┐
 -- │                  MOVE FOCUS (arrows + vim keys)                      │
@@ -370,6 +392,7 @@ hl.bind("code:156", hl.dsp.exec_cmd("~/.local/bin/monitor_mode_switcher t"))
 -- │                          GESTURES                                    │
 -- └──────────────────────────────────────────────────────────────────────┘
 
+hl.gesture({ fingers = 2, direction = "pinch", action = "cursorZoom", zoom_level = 1.2, mode = "live" })
 hl.gesture({ fingers = 3, direction = "horizontal", scale = 1.5, action = "workspace" })
 hl.gesture({ fingers = 3, direction = "up", scale = 1.5, action = "fullscreen" })
 hl.gesture({ fingers = 4, direction = "swipe", scale = 1.5, action = "move" })

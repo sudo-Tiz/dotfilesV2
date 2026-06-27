@@ -10,8 +10,6 @@
 # output_path = "~/.config/myapp/theme.css"
 # post_hook = "myapp --reload-theme"
 
-# Remove this section and add your own templates
-#[templates.placeholder]
-#input_path = "/etc/xdg/quickshell/noctalia-shell/Assets/Templates/noctalia.json"
-#output_path = "/home/tiz/.cache/noctalia/placeholder.json"
-
+[templates.rofi]
+input_path = "~/.config/noctalia/templates/rofi.rasi"
+output_path = "~/.config/rofi/themes/noctalia.rasi"

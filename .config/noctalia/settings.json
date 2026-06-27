@@ -14,7 +14,7 @@
         "enableSessionSearch": true,
         "enableSettingsSearch": true,
         "enableWindowsSearch": true,
-        "iconMode": "native",
+        "iconMode": "tabler",
         "ignoreMouseInput": false,
         "overviewLayer": false,
         "pinnedApps": [
@@ -730,6 +730,10 @@
             {
                 "enabled": true,
                 "id": "hyprland"
+            },
+            {
+                "enabled": true,
+                "id": "fuzzel"
             }
         ],
         "enableUserTheming": true
