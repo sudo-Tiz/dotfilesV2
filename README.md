@@ -2,6 +2,8 @@
 
 My personal dotfiles for a Hyprland-based Arch Linux desktop.
 
+![screenshot](.local/share/larbs/assets/screenshot.png) 
+
 For Xorg/dwm dotfiles, see [github.com/sudo-Tiz/dotfiles](https://github.com/sudo-Tiz/dotfiles).
 
 ## Stack
