@@ -125,6 +125,15 @@ hl.config({
 })
 
 -- ┌──────────────────────────────────────────────────────────────────────┐
+-- │                          PER DEVICES                                 │
+-- └──────────────────────────────────────────────────────────────────────┘
+
+hl.device({
+	name = "e-signal/a-one-usb-gaming-mouse",
+	sensitivity = -0.50,
+})
+
+-- ┌──────────────────────────────────────────────────────────────────────┐
 -- │                          ANIMATIONS                                  │
 -- └──────────────────────────────────────────────────────────────────────┘
 
@@ -174,7 +183,7 @@ end)
 -- │                    APPLICATION LAUNCHERS                             │
 -- └──────────────────────────────────────────────────────────────────────┘
 
-hl.bind("SUPER + A", hl.dsp.exec_cmd(ipc .. " launcher toggle"), { release = true })
+hl.bind("SUPER + D", hl.dsp.exec_cmd(ipc .. " launcher toggle"), { release = true })
 hl.bind("SUPER + X", hl.dsp.exec_cmd(term))
 hl.bind("SUPER + Return", hl.dsp.exec_cmd(term))
 hl.bind("SUPER + W", hl.dsp.exec_cmd("brave"))
@@ -199,7 +208,7 @@ hl.bind("SUPER + B", hl.dsp.exec_cmd(ipc .. " bluetooth togglePanel"))
 hl.bind("SUPER + SHIFT + B", hl.dsp.exec_cmd("blueman-manager"))
 hl.bind("SUPER + C", hl.dsp.exec_cmd(ipc .. " plugin:noctalia-calculator toggle"))
 hl.bind("SUPER + comma", hl.dsp.exec_cmd(ipc .. " settings toggle"))
-hl.bind("SUPER + SHIFT + A", hl.dsp.exec_cmd(ipc .. " plugin:keybind-cheatsheet toggle"))
+hl.bind("SUPER + A", hl.dsp.exec_cmd(ipc .. " plugin:keybind-cheatsheet toggle"))
 hl.bind("SUPER + V", hl.dsp.exec_cmd(ipc .. " launcher clipboard"))
 hl.bind("SUPER + SHIFT + V", hl.dsp.exec_cmd("dmenulink"))
 hl.bind("SUPER + Backspace", hl.dsp.exec_cmd(ipc .. " sessionMenu toggle"))
@@ -422,12 +431,11 @@ end)
 -- │                     LETTERS — SUPER                                  │
 -- └──────────────────────────────────────────────────────────────────────┘
 
--- hl.bind("SUPER + D", ...)
-
 -- ┌──────────────────────────────────────────────────────────────────────┐
 -- │                     LETTERS — SUPER SHIFT                            │
 -- └──────────────────────────────────────────────────────────────────────┘
 
+-- hl.bind("SUPER + SHIFT + A", ...)
 -- hl.bind("SUPER + SHIFT + B", ...)
 -- hl.bind("SUPER + SHIFT + C", ...)
 -- hl.bind("SUPER + SHIFT + G", ...)

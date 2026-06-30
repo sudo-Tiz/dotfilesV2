@@ -32,4 +32,4 @@ Colors are managed by **Noctalia**. Changing the theme in Noctalia settings auto
 
 ## Keybindings
 
-Press `Super + Shift + A` to open the keybind cheatsheet.
+Press `Super + A` to open the keybind cheatsheet.
