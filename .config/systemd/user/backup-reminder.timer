@@ -1,0 +1,10 @@
+[Unit]
+Description=Monthly backup reminder
+
+[Timer]
+OnCalendar=monthly
+Persistent=true
+Unit=backup-reminder.service
+
+[Install]
+WantedBy=timers.target
