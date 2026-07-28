@@ -203,7 +203,9 @@ hl.bind("SUPER + O", hl.dsp.exec_cmd("signal-desktop"))
 -- │                     SHELL / UI CONTROLS                              │
 -- └──────────────────────────────────────────────────────────────────────┘
 
-hl.bind("SUPER + N", hl.dsp.exec_cmd(ipc .. " network togglePanel"))
+hl.bind("SUPER + N", hl.dsp.exec_cmd("nm-connection-editor"))
+hl.bind("SUPER + CONTROL + N", hl.dsp.exec_cmd(ipc .. " network togglePanel"))
+hl.bind("SUPER + SHIFT + N", hl.dsp.exec_cmd(term .. " nmtui"))
 hl.bind("SUPER + B", hl.dsp.exec_cmd(ipc .. " bluetooth togglePanel"))
 hl.bind("SUPER + SHIFT + B", hl.dsp.exec_cmd("blueman-manager"))
 hl.bind("SUPER + C", hl.dsp.exec_cmd(ipc .. " plugin:noctalia-calculator toggle"))
@@ -225,12 +227,12 @@ hl.bind("SUPER + S", hl.dsp.window.pin())
 hl.bind("SUPER + Space", hl.dsp.window.float())
 hl.bind("SUPER + G", hl.dsp.exec_cmd("hyprfreeze -a"))
 hl.bind("SUPER + asterisk", hl.dsp.exec_cmd("hyprctl reload"))
+hl.bind("ALT + Tab", hl.dsp.layout("togglesplit"))
 
 -- ┌──────────────────────────────────────────────────────────────────────┐
 -- │                     SPECIAL WORKSPACE                                │
 -- └──────────────────────────────────────────────────────────────────────┘
 
-hl.bind("ALT + Tab", hl.dsp.layout("togglesplit"))
 hl.bind("SUPER + SHIFT + Tab", hl.dsp.window.move({ workspace = "special" }))
 hl.bind("SUPER + Tab", hl.dsp.workspace.toggle_special())
 
@@ -440,7 +442,6 @@ end)
 -- hl.bind("SUPER + SHIFT + C", ...)
 -- hl.bind("SUPER + SHIFT + G", ...)
 -- hl.bind("SUPER + SHIFT + I", ...)
--- hl.bind("SUPER + SHIFT + N", ...)
 -- hl.bind("SUPER + SHIFT + O", ...)
 -- hl.bind("SUPER + SHIFT + P", ...)
 -- hl.bind("SUPER + SHIFT + R", ...)
@@ -459,7 +460,6 @@ end)
 -- hl.bind("SUPER + CONTROL + G", ...)
 -- hl.bind("SUPER + CONTROL + I", ...)
 -- hl.bind("SUPER + CONTROL + M", ...)
--- hl.bind("SUPER + CONTROL + N", ...)
 -- hl.bind("SUPER + CONTROL + O", ...)
 -- hl.bind("SUPER + CONTROL + P", ...)
 -- hl.bind("SUPER + CONTROL + Q", ...)
