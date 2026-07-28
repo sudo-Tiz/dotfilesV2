@@ -1,0 +1,6 @@
+action copy
+clear-after 10
+keybindings Return:copy:username:delay:password:delay:totp,Alt+1:type:username:tab:password,Alt+2:type:username,Alt+3:type:password,Alt+4:type:totp,Alt+u:copy:username,Alt+t:copy:totp,Alt+m::menu,Alt+s:sync
+use-notify-send
+action-sequence-delay 2000
+selector-args "-kb-accept-entry ''"
