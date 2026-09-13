@@ -57,11 +57,15 @@ alias \
 
 # These commands are just too long! Abbreviate them.
 alias \
+  ipbra="ip -br a" \
+  ssnul="ss -ptnul" \
   ka="killall" \
   trem="transmission-remote" \
   YT="youtube-viewer" \
   sdn="shutdown -h now" \
   v="$EDITOR" \
+  vi="$EDITOR" \
+  vim="$EDITOR" \
   sv="sudo nvim" \
   p="pacman" \
   sp="sudo pacman" \
@@ -76,8 +80,7 @@ alias \
   egrep="grep -E" \
   fd="fd -Hi" \
   qute-clear="rm -rf ~/.local/share/qutebrowser/webengine; rm -rf ~/.cache/qutebrowser/webengine/" \
-  mdtemp="cd $(mktemp -d)" \
-  nocta="qs -c noctalia-shell ipc"
+  mdtemp="cd $(mktemp -d)"
 old() { mv -- "$1" "$1.old"; }
 new(){ mv -- "${1}.old" "$1"; }
 bak() { cp -a -- "$1" "$1.bak"; }
@@ -95,9 +98,11 @@ baktar() { tar -zcvf "${1}_$(date '+%Y-%m-%d_%H-%M').tar.gz" -- "$1"; }
   gd="git diff" \
   gcl='git clone' \
   gull='git pull' \
+  gullp='git stash && git pull && git stash pop' \
   gush='git push' \
   gusho='git push -f origin' \
   gash="git stash" \
+  gashp="git stash" \
   gme= "git merge" \
   gmest="git merge stash" \
   gco='git commit -m' \
@@ -111,6 +116,8 @@ baktar() { tar -zcvf "${1}_$(date '+%Y-%m-%d_%H-%M').tar.gz" -- "$1"; }
   gb='git branch' \
   gch="git checkout" \
   gchb="git checkout -b" \
+  gsiu="git submodule init && git submodule update" \
+  gsur="git submodule update --remote" \
   gls='l --group-directories-first --color=auto -d $(git ls-tree $(git branch | grep \* | cut -d " " -f2) --name-only)' \
   gll='l --group-directories-first --color=auto -d $(git ls-tree -r $(git branch | grep \* | cut -d " " -f2) --name-only)' \
   grao='git remote rm origin; git remote add origin'  &&
@@ -132,6 +139,13 @@ alias \
 [ -x "$(command -v pactl)" ] && alias \
   micloopback='pactl unload-module module-loopback >/dev/null 2>&1 | grep Failed && pactl load-module module-loopback latency_msec=1'
 
+# VAAPI record with wf-recorder (need libva driver and wf-recorder)
+[ -x "$(command -v wf-recorder)" ] && alias \
+  wf-recorder-vaapi="wf-recorder -c h264_vaapi -d /dev/dri/renderD128"
+
+# Take a picture
+alias campic="ffmpeg -f v4l2 -i /dev/video0 -vframes 1 image.jpg"
+
 # PDF to JPG (need imagemagick)
 [ -x "$(command -v convert)" ] && pdftojpg() {
   [ $# = 1 ] && convert -density 150 "$1" -quality 90 "$(echo $1 | sed s/.pdf/%03d.jpg/g)" || echo ERROR
@@ -139,9 +153,6 @@ alias \
 
 [ -x "$(command -v wofi)" ] && alias \
   dmenu='wofi -d'
-
-# Take a picture
-alias campic="ffmpeg -f v4l2 -i /dev/video0 -vframes 1 image.jpg"
 
 # Cheatsheet for linux commands
 ch() { curl "http://cheat.sh/$1"; }

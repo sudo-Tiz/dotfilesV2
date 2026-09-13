@@ -1,0 +1,361 @@
+[audio]
+enable_overdrive = true
+
+[bar]
+order = ["default"]
+
+[bar.default]
+background_opacity = 0.0
+capsule = true
+capsule_padding = 4.0
+capsule_thickness = 0.90999998338520527
+center = []
+concave_edge_corners = false
+end = [
+  "tray",
+  "privacy",
+  "widget",
+  "notifications",
+  "bluetooth",
+  "volume",
+  "network",
+  "clock",
+  "battery",
+  "control-center",
+]
+margin_ends = 0
+radius = 0
+start = ["launcher", "spacerman", "taskbar", "spacerman", "group:g1"]
+thickness = 24
+
+[[bar.default.capsule_group]]
+accordion = false
+accordion_direction = "end"
+enabled = true
+fill = "surface_variant"
+id = "g1"
+members = ["cpu", "temp", "ram", "sysmon", "network_rx", "network_tx"]
+opacity = 1.0
+padding = 6.0
+
+[battery]
+warning_threshold = 20
+
+[brightness]
+enable_ddcutil = true
+
+[calendar.account.france]
+name = "jours fériés"
+server_url = "https://etalab.github.io/jours-feries-france-data/ics/jours_feries_metropole.ics"
+type = "ics"
+
+[config]
+
+[control_center]
+width = 800
+
+[control_center.calendar]
+show_week_numbers = true
+
+[[control_center.shortcuts]]
+type = "caffeine"
+
+[[control_center.shortcuts]]
+type = "nightlight"
+
+[[control_center.shortcuts]]
+type = "dark_mode"
+
+[[control_center.shortcuts]]
+type = "clipboard"
+
+[[control_center.shortcuts]]
+type = "alexander/screen-toolkit:toggle"
+
+[[control_center.shortcuts]]
+type = "nikolaj-zwergius/iio_lock:toggle"
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = []
+
+[desktop_widgets.grid]
+cell_size = 16
+major_interval = 4
+visible = true
+
+[desktop_widgets.widget]
+
+[dock]
+launcher_position = "start"
+smart_auto_hide = true
+
+[hot_corners]
+enabled = true
+
+[hot_corners.top_left]
+action = "launcher"
+
+[idle]
+behavior_order = ["screen-off", "suspend-then-hibernate"]
+pre_action_fade_seconds = 20
+
+[idle.behavior.screen-off]
+action = "screen_off"
+enabled = true
+timeout = 1700.0
+
+[idle.behavior.suspend-then-hibernate]
+action = "command"
+command = "systemctl suspend-to-hibernate"
+enabled = true
+timeout = 1800.0
+
+[location]
+address = "nantes"
+
+[lockscreen]
+enabled = false
+
+[lockscreen_widgets]
+enabled = false
+
+[nightlight]
+enabled = true
+
+[notification]
+history_retention_hours = 12
+
+[osd]
+position = "bottom_center"
+position_vertical = "center_right"
+
+[plugin_settings."alexander/screen-toolkit"]
+panel-legacy_open_near_click = true
+panel-legacy_placement = "floating"
+panel-legacy_position = "top_center"
+panel_open_near_click = true
+panel_placement = "floating"
+panel_position = "top_center"
+result_open_near_click = true
+result_placement = "floating"
+result_position = "top_center"
+screenshot-path = "~/images/Screenshots"
+search-engine-url = "https://search.brave.com/search?q="
+selected-ocr-lang = "eng+fra"
+video-path = "~/images"
+
+[plugin_settings."yuuto/arch-updater"]
+auto_check_hours = 24
+notify_on_updates = false
+panel_placement = "floating"
+
+[plugin_settings."yuuto/calculator"]
+panel_placement = "floating"
+panel_position = "top_center"
+
+[plugins]
+enabled = [
+  "yuuto/arch-updater",
+  "kenn/keybind-cheatsheet",
+  "alexander/screen-toolkit",
+  "yuuto/calculator",
+  "nikolaj-zwergius/iio_lock",
+  "blackbartblues/keymap",
+]
+
+[shell]
+avatar_path = "/home/tiz/.config/noctalia/face.png"
+password_style = "random"
+polkit_agent = true
+settings_window_translucent = true
+time_format = "{:%H:%M:%S}"
+clipboard_auto_paste = "off"
+
+[shell.launcher]
+app_grid = true
+auto_paste = "off"
+categories = false
+fetch_exchange_rates = false
+
+[shell.launcher.providers.calculator]
+global = true
+
+[shell.launcher.providers.emoji]
+global = false
+
+[shell.panel]
+clipboard_placement = "floating"
+clipboard_position = "top_center"
+control_center_placement = "floating"
+launcher_placement = "floating"
+launcher_position = "top_left"
+open_near_click_control_center = true
+open_near_click_launcher = true
+polkit_placement = "floating"
+session_placement = "floating"
+session_position = "center"
+transparency_mode = "glass"
+wallpaper_placement = "floating"
+wallpaper_position = "top_center"
+
+[[shell.session.actions]]
+action = "lock"
+countdown_seconds = 0.0
+enabled = false
+shortcut = "1"
+variant = "default"
+
+[[shell.session.actions]]
+action = "lock_and_suspend"
+countdown_seconds = 0.0
+enabled = false
+shortcut = "3"
+variant = "default"
+
+[[shell.session.actions]]
+action = "logout"
+countdown_seconds = 5.0
+enabled = true
+shortcut = "l"
+variant = "default"
+
+[[shell.session.actions]]
+action = "suspend"
+command = "systemctl suspend-then-hibernate"
+countdown_seconds = 0.0
+enabled = true
+shortcut = "s"
+variant = "default"
+
+[[shell.session.actions]]
+action = "command"
+command = "systemctl hibernate"
+countdown_seconds = 5.0
+enabled = true
+label = "Hibernate"
+shortcut = "h"
+variant = "default"
+
+[[shell.session.actions]]
+action = "reboot"
+countdown_seconds = 5.0
+enabled = true
+shortcut = "r"
+variant = "default"
+
+[[shell.session.actions]]
+action = "shutdown"
+countdown_seconds = 5.0
+enabled = true
+shortcut = "BackSpace"
+variant = "destructive"
+
+[templates.rofi]
+input_path = "~/.config/noctalia/templates/rofi.rasi"
+output_path = "~/.config/rofi/themes/noctalia.rasi"
+
+[theme]
+builtin = "Gruvbox"
+community_palette = "Oxocarbon"
+mode = "dark"
+pure_black_dark = false
+source = "builtin"
+wallpaper_scheme = "m3-content"
+
+[theme.templates]
+builtin_ids = ["btop", "foot", "gtk3", "gtk4", "hyprland", "qt"]
+community_ids = ["vscode", "steam", "rofi", "zathura", "yazi"]
+
+[wallpaper]
+directory = "/home/tiz/.local/share/bg"
+transition_on_startup = true
+
+[wallpaper.default]
+path = "/home/tiz/.local/share/bg/tty1.jpg"
+
+[wallpaper.last]
+path = "/home/tiz/.local/share/bg/tty1.jpg"
+
+[wallpaper.monitors.eDP-1]
+path = "/home/tiz/.local/share/bg/tty1.jpg"
+
+[[wallpaper.favorite]]
+builtin_palette = "Ayu"
+palette_source = "builtin"
+path = "/home/tiz/.local/share/bg/tty1.jpg"
+theme_mode = "dark"
+
+[widget.battery]
+display_mode = "graphic"
+
+[widget.bluetooth]
+show_label = true
+
+[widget.clock]
+format = " {: %d/%m - %H:%M:%S} "
+
+[widget.control-center]
+capsule = true
+capsule_fill = "primary"
+color = "on_primary"
+glyph = "yin-yang"
+
+[widget.cpu]
+visualization = "none"
+
+[widget.launcher]
+capsule = true
+capsule_fill = "primary"
+color = "on_primary"
+
+[widget.media]
+hide_when_no_media = true
+
+[widget.network]
+font_scale = 1.0
+show_label = true
+show_vpn_label = true
+vpn_status = "both"
+
+[widget.network_rx]
+network_speed_compact = true
+visualization = "graph"
+
+[widget.network_tx]
+network_speed_compact = true
+visualization = "graph"
+
+[widget.privacy]
+hide_inactive = true
+
+[widget.ram]
+visualization = "none"
+
+[widget.spacerman]
+type = "spacer"
+
+[widget.sysmon]
+stat = "disk_used_pct"
+visualization = "none"
+
+[widget.taskbar]
+group_by_workspace = true
+group_single_icon_per_app = true
+show_all_outputs = true
+
+[widget.temp]
+show_glyph = false
+visualization = "none"
+
+[widget.volume]
+show_label = false
+
+[widget.widget]
+hide_on_empty = true
+type = "yuuto/arch-updater:widget"
+
+[widget.workspaces]
+show_all_outputs = true
+style = "focus_hint"

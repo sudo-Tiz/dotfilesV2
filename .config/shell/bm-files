@@ -13,5 +13,5 @@ cfmb	${XDG_CONFIG_HOME:-$HOME/.config}/ncmpcpp/bindings	# ncmpcpp (music player)
 cfmc	${XDG_CONFIG_HOME:-$HOME/.config}/ncmpcpp/config	# ncmpcpp (music player) config
 cfX	${XDG_CONFIG_HOME:-$HOME/.config}/nsxiv/exec/key-handler	# nsxiv (image viewer) key/script handler
 cfh ${XDG_CONFIG_HOME:-$HOME/.config}/hypr/hyprland.lua		# Hyprland config
-cfn ${XDG_CONFIG_HOME:-$HOME/.config}/noctalia/settings.json # Noctalia (status bar) config
+cfn ${XDG_CONFIG_HOME:-$HOME/.config}/noctalia/noctalia-config.toml # Noctalia (status bar) config
 
