@@ -1,0 +1,15 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "*": "ask",
+    "bash": {
+      "*": "ask",
+      "git /home/*": "allow",
+      "grep /home/*": "allow",
+      "ls /home/*": "allow",
+      "file /home/*": "allow",
+      "cat /home/*": "allow",
+      "which /home/*": "allow"
+    }
+  }
+}
