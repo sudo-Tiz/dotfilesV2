@@ -1,0 +1,65 @@
+* {
+  bg: #282828;
+  bg-alt: #3c3836;
+  fg: #fbf1c7;
+  accent: #b8bb26;
+  accent-fg: #282828;
+  border: #76706c;
+}
+
+window {
+  background-color: @bg;
+  text-color: @fg;
+  border: 1px;
+  border-color: @border;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+mainbox {
+  background-color: transparent;
+  spacing: 8px;
+}
+
+inputbar {
+  background-color: @bg-alt;
+  text-color: @fg;
+  border-radius: 6px;
+  padding: 8px 10px;
+  spacing: 8px;
+}
+
+prompt, entry {
+  background-color: transparent;
+  text-color: @fg;
+}
+
+listview {
+  background-color: transparent;
+  spacing: 4px;
+  lines: 8;
+}
+
+element {
+  background-color: transparent;
+  text-color: @fg;
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+element selected {
+  background-color: @accent;
+  text-color: @accent-fg;
+}
+
+element-text, element-icon {
+  background-color: transparent;
+  text-color: inherit;
+}
+
+message {
+  background-color: @bg-alt;
+  text-color: @fg;
+  border-radius: 6px;
+  padding: 8px;
+}
