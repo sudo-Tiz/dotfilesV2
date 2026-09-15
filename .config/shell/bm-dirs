@@ -8,8 +8,7 @@ h   $HOME
 m  /mnt
 D   ${XDG_DOWNLOAD_DIR:-$HOME/Downloads}
 d   ${XDG_DOCUMENTS_DIR:-$HOME/documents}
-L   $HOME/local/
-M   /media/HDD/$USER
+L   $HOME/local
 S   $HOME/space
-mash $HOME/local/mash-playbook
-ash $HOME/.local/src/ashell
+M   $HOME/local/mash-playbook
+R   $HOME/local/REPO/github
