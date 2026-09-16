@@ -94,9 +94,6 @@ fzf-cd-widget() {
 zle -N fzf-cd-widget
 bindkey '^f' fzf-cd-widget
 
-
-
-
 yazicwd() {
   local tmp cwd
 
@@ -137,5 +134,8 @@ bindkey -M vicmd '^e' edit-command-line
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme ]] || \
   source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || \
-  source ~/.config/zsh/.p10k.zsh
+[[ ! -f ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh ]] || \
+  source ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/.p10k.zsh
+# Add Fzf theme
+[[ ! -f ${XDG_CONFIG_HOME:-$HOME/.config}/fzf/themes/noctalia.sh  ]] || \
+  source ${XDG_CONFIG_HOME:-$HOME/.config}/fzf/themes/noctalia.sh

@@ -96,6 +96,7 @@ baktar() { tar -zcvf "${1}_$(date '+%Y-%m-%d_%H-%M').tar.gz" -- "$1"; }
 [ -x "$(command -v git)" ] && alias \
   g="git" \
   gd="git diff" \
+  gds="git diff --staged" \
   gcl='git clone' \
   gull='git pull' \
   gullp='git stash && git pull && git stash pop' \

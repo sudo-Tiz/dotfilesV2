@@ -1,11 +1,11 @@
 cac ${XDG_CACHE_HOME:-$HOME/.cache}
-cf  ${XDG_CONFIG_HOME:-$HOME/.config}
+C  ${XDG_CONFIG_HOME:-$HOME/.config}
 dt  ${XDG_DATA_HOME:-$HOME/.local/share}
-sc  $HOME/.local/bin
+B   $HOME/.local/bin
 src $HOME/.local/src
-
-h   $HOME
-m  /mnt
+m   /mnt
+N   ${XDG_CONFIG_HOME:-$HOME/.config}/nvim 
+H   ${XDG_CONFIG_HOME:-$HOME/.config}/hypr
 D   ${XDG_DOWNLOAD_DIR:-$HOME/Downloads}
 d   ${XDG_DOCUMENTS_DIR:-$HOME/documents}
 L   $HOME/local
