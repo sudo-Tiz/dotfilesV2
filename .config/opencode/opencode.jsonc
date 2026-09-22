@@ -1,19 +1,21 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": [
-    "@dietrichgebert/ponytail",
-    "opencode-caveman"
-  ],
-  "skill": ["caveman"],
   "permission": {
     "*": "ask",
+    "read": "allow",
     "bash": {
       "*": "ask",
-      "grep /home/*": "allow",
-      "ls /home/*": "allow",
-      "file /home/*": "allow",
-      "cat /home/*": "allow",
-      "which /home/*": "allow"
+      "grep *": "allow",
+      "ls *": "allow",
+      "wc *": "allow",
+      "sort *": "allow",
+      "file *": "allow",
+      "cat *": "allow",
+      "head *": "allow",
+      "git diff *": "allow",
+      "git status *": "allow",
+      "git ls-files *": "allow",
+      "git show *": "allow"
     }
   }
 }
