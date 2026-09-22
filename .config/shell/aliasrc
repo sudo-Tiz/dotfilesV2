@@ -113,6 +113,7 @@ baktar() { tar -zcvf "${1}_$(date '+%Y-%m-%d_%H-%M').tar.gz" -- "$1"; }
   grs='git restore --staged' \
   greset1='git reset --hard HEAD~1' \
   gst='git status' \
+  gstl='git status|less' \
   gl='git log' \
   gb='git branch' \
   gch="git checkout" \
