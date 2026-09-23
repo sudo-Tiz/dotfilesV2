@@ -3,6 +3,8 @@
   "permission": {
     "*": "ask",
     "read": "allow",
+    "todowrite": "allow",
+    "skill": "allow",
     "bash": {
       "*": "ask",
       "grep *": "allow",

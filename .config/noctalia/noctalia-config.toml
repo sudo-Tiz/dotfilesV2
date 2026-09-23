@@ -12,6 +12,7 @@ capsule_thickness = 0.90999998338520527
 center = []
 concave_edge_corners = false
 end = [
+  "lock_keys",
   "tray",
   "privacy",
   "widget",
@@ -309,6 +310,10 @@ visualization = "none"
 capsule = true
 capsule_fill = "primary"
 color = "on_primary"
+
+[widget.lock_keys]
+hide_when_off = true
+show_num_lock = false
 
 [widget.media]
 hide_when_no_media = true

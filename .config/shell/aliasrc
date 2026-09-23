@@ -137,6 +137,27 @@ alias \
   cpv='rsync -ah --info=progress2' \
   mvv='rsync -ah --remove-source-files --info=progress2'
 
+# opencode 
+opc() {
+    local dir
+    dir="$(pwd -P)" || return 1
+
+    case "$dir" in
+        "$HOME/local"|"$HOME/local"/*|"$HOME/space"|"$HOME/space"/*|/tmp|/tmp/*)
+            command firejail \
+                --quiet \
+                --caps.drop=all \
+                --private-tmp \
+                --read-write="$dir" \
+                opencode "$dir"
+            ;;
+        *)
+            printf 'Erreur : répertoire non autorisé : %s\n' "$dir" >&2
+            return 1
+            ;;
+    esac
+}
+
 # Micro to speaker
 [ -x "$(command -v pactl)" ] && alias \
   micloopback='pactl unload-module module-loopback >/dev/null 2>&1 | grep Failed && pactl load-module module-loopback latency_msec=1'

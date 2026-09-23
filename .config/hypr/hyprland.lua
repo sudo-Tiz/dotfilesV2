@@ -147,7 +147,7 @@ hl.animation({ leaf = "fade", enabled = true, speed = 1, bezier = "default" })
 hl.animation({ leaf = "workspaces", enabled = true, speed = 1, bezier = "default" })
 
 -- ┌──────────────────────────────────────────────────────────────────────┐
--- │                          LAYER RULES                                 │
+-- │                          LAYER                                       │
 -- └──────────────────────────────────────────────────────────────────────┘
 
 hl.layer_rule({
@@ -170,6 +170,13 @@ hl.workspace_rule({ workspace = "2", persistent = true })
 hl.workspace_rule({ workspace = "3", persistent = true })
 hl.workspace_rule({ workspace = "4", persistent = true })
 hl.workspace_rule({ workspace = "5", persistent = true })
+
+-- ┌──────────────────────────────────────────────────────────────────────┐
+-- │                          WINDOW                                      │
+-- └──────────────────────────────────────────────────────────────────────┘
+
+hl.window_rule({ name = "signal-workspace", match = { initial_class = "signal", }, workspace = 9, })
+hl.window_rule({ name = "thunderbird-workspace", match = { initial_class = "thunderbird", }, workspace = 8, })
 
 -- ┌──────────────────────────────────────────────────────────────────────┐
 -- │                          AUTOSTART                                   │
